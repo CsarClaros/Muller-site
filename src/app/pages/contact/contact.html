@@ -1,1 +1,148 @@
-<p>contact works!</p>
+<div class="bg-white">
+    <!-- Page Header -->
+    <div class="bg-[#374151] text-white py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+            <p class="text-xl text-gray-300 max-w-2xl">
+                Get in touch with our team for quotes, technical support, or general inquiries
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+            <!-- Contact Information -->
+            <div class="lg:col-span-1 space-y-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">
+                        Our team is here to help you find the perfect solution for your agricultural or industrial
+                        needs.
+                    </p>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-[#DC2626] rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 2L12 22M2 12L22 12" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Visit Us</h3>
+                            <p class="text-gray-600">
+                                1234 Industrial Avenue, Suite 100<br />
+                                Agricultural District, CA 90210<br />
+                                United States
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-[#DC2626] rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5h18M3 10h18M3 15h18M3 20h18" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Call Us</h3>
+                            <p class="text-gray-600">
+                                Main: +1 (800) 123-4567<br />
+                                Sales: +1 (800) 123-4568<br />
+                                Support: +1 (800) 123-4569
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-[#DC2626] rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 12h2M8 12h2M12 16v2M12 8V6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Email Us</h3>
+                            <p class="text-gray-600">
+                                General: info@agrowater.com<br />
+                                Sales: sales@agrowater.com<br />
+                                Support: support@agrowater.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="lg:col-span-2">
+                <div class="bg-gray-50 rounded-lg p-8 md:p-10">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                    <p class="text-gray-600 mb-8">
+                        Fill out the form below and our team will get back to you within 24 hours.
+                    </p>
+
+                    <form (submit)="handleSubmit($event)" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block font-semibold text-gray-900 mb-1">Full Name *</label>
+                                <input id="name" name="name" type="text" required [(ngModel)]="formData.name"
+                                    name="name" class="mt-1.5 bg-white w-full border rounded px-3 py-2"
+                                    placeholder="John Doe" />
+                            </div>
+                            <div>
+                                <label for="email" class="block font-semibold text-gray-900 mb-1">Email Address
+                                    *</label>
+                                <input id="email" name="email" type="email" required [(ngModel)]="formData.email"
+                                    name="email" class="mt-1.5 bg-white w-full border rounded px-3 py-2"
+                                    placeholder="john@company.com" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="phone" class="block font-semibold text-gray-900 mb-1">Phone Number</label>
+                                <input id="phone" name="phone" type="tel" [(ngModel)]="formData.phone" name="phone"
+                                    class="mt-1.5 bg-white w-full border rounded px-3 py-2"
+                                    placeholder="+1 (555) 000-0000" />
+                            </div>
+                            <div>
+                                <label for="company" class="block font-semibold text-gray-900 mb-1">Company Name</label>
+                                <input id="company" name="company" type="text" [(ngModel)]="formData.company"
+                                    name="company" class="mt-1.5 bg-white w-full border rounded px-3 py-2"
+                                    placeholder="Your Company" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block font-semibold text-gray-900 mb-1">Subject *</label>
+                            <input id="subject" name="subject" type="text" required [(ngModel)]="formData.subject"
+                                name="subject" class="mt-1.5 bg-white w-full border rounded px-3 py-2"
+                                placeholder="How can we help you?" />
+                        </div>
+
+                        <div>
+                            <label for="message" class="block font-semibold text-gray-900 mb-1">Message *</label>
+                            <textarea id="message" name="message" rows="6" required [(ngModel)]="formData.message"
+                                name="message" class="mt-1.5 bg-white w-full border rounded px-3 py-2 resize-none"
+                                placeholder="Please provide details about your inquiry..."></textarea>
+                        </div>
+
+                        <button type="submit" [disabled]="sending"
+                            class="w-full bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold py-3 rounded">
+                            {{ sending ? 'Enviando...' : 'Send Message' }}
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

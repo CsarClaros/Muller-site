@@ -77,9 +77,7 @@
         <nav class="px-4 py-4 space-y-3">
 
             <a *ngFor="let link of navLinks" [routerLink]="link.path" (click)="isMobileMenuOpen = false"
-                class="block px-4 py-2 rounded-lg text-sm font-medium" [ngClass]="isActive(link.path)
-          ? 'bg-[#DC2626] text-white'
-          : 'text-gray-700 hover:bg-gray-100'">
+                class="block px-4 py-2 rounded-lg text-sm font-medium" [ngClass]="isActive(link.path) ? 'bg-[#DC2626] text-white': 'text-gray-700 hover:bg-gray-100'">
                 {{ language === 'EN' ? link.labelEN : link.labelES }}
             </a>
 

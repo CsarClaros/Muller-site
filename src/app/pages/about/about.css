@@ -1,0 +1,7 @@
+/* Tailwind maneja la mayoría de estilos, solo line-clamp si se requiere */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

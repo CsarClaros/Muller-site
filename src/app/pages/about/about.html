@@ -1,1 +1,164 @@
-<p>about works!</p>
+<div class="bg-white">
+
+    <!-- Page Header -->
+    <div class="bg-[#374151] text-white py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">About AgroWater</h1>
+            <p class="text-xl text-gray-300 max-w-3xl">
+                Leading the industry in agricultural irrigation equipment and industrial power solutions since 2001
+            </p>
+        </div>
+    </div>
+
+    <!-- Company Introduction -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Powering Agriculture & Industry Worldwide
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        AgroWater Industrial Solutions is a leading B2B provider of agricultural irrigation equipment,
+                        diesel engines, power generators, and water pumping solutions...
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Our commitment to quality, innovation, and customer service has made us a trusted partner...
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        From small family farms to large industrial operations, we provide the expertise and equipment
+                        you need...
+                    </p>
+                </div>
+                <div class="order-first lg:order-last">
+                    <div class="rounded-lg overflow-hidden shadow-2xl">
+                        <img [src]="teamImage" alt="AgroWater Team" (error)="handleImageError($event)"
+                            class="w-full h-[500px] object-cover" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-[#DC2626] text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div *ngFor="let stat of stats" class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">{{ stat.number }}</div>
+                    <div class="text-gray-100">{{ stat.label }}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-gray-50 rounded-lg p-8 md:p-10">
+                    <div class="w-14 h-14 bg-[#DC2626] rounded-lg flex items-center justify-center mb-6">
+                        <!-- Icon Target -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white" width="28" height="28" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v3m0 0v3m0-3h3m-3 0H9" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        To empower agricultural and industrial businesses with reliable, efficient, and innovative
+                        equipment...
+                    </p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-8 md:p-10">
+                    <div class="w-14 h-14 bg-[#16a34a] rounded-lg flex items-center justify-center mb-6">
+                        <!-- Icon Eye -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white" width="28" height="28" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 12c2.28 0 4.1-1.85 4.1-4.1S14.28 3.8 12 3.8 7.9 5.65 7.9 7.9 9.72 12 12 12z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8-10-8-10-8z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Vision</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        To be the world's most trusted partner for agricultural irrigation and industrial power
+                        solutions...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Values -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">The principles that guide everything we do</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div *ngFor="let value of values"
+                    class="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-[#DC2626] rounded-lg flex items-center justify-center mb-4">
+                        <!-- Aquí se puede insertar SVG según value.icon -->
+                        <span class="text-white font-bold text-sm">{{ value.icon }}</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">{{ value.title }}</h3>
+                    <p class="text-gray-600">{{ value.description }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industrial Images -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                    <img [src]="warehouseImage" alt="Industrial Warehouse" (error)="handleImageError($event)"
+                        class="w-full h-[350px] object-cover" />
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                    <img [src]="tractorImage" alt="Agricultural Equipment" (error)="handleImageError($event)"
+                        class="w-full h-[350px] object-cover" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 md:py-24 bg-[#374151] text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Partner with AgroWater?</h2>
+                <p class="text-lg text-gray-300 mb-8">
+                    We go beyond just supplying equipment. We're your long-term partner in success...
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Expert Consultation</h3>
+                        <p class="text-gray-300 text-sm">
+                            Our experienced team helps you select the perfect equipment...
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Installation Support</h3>
+                        <p class="text-gray-300 text-sm">
+                            Professional installation services to ensure optimal performance...
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Ongoing Maintenance</h3>
+                        <p class="text-gray-300 text-sm">
+                            Comprehensive maintenance programs to maximize equipment lifespan...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
