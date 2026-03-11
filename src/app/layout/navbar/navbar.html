@@ -1,1 +1,90 @@
-<p>navbar works!</p>
+<header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex justify-between items-center h-20">
+
+            <!-- Logo -->
+            <a routerLink="/" class="flex items-center space-x-3">
+
+                <div class="w-12 h-12 bg-[#DC2626] rounded-lg flex items-center justify-center">
+                    <div class="text-white text-xl font-bold">AW</div>
+                </div>
+
+                <div class="hidden sm:block">
+                    <div class="text-xl font-bold text-gray-900">AgroWater</div>
+
+                    <div class="text-xs text-gray-500">
+                        {{ language === 'EN' ? 'Industrial Solutions' : 'Soluciones Industriales' }}
+                    </div>
+                </div>
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+
+                <a *ngFor="let link of navLinks" [routerLink]="link.path"
+                    class="text-sm font-medium transition-colors hover:text-[#DC2626]"
+                    [ngClass]="isActive(link.path) ? 'text-[#DC2626]' : 'text-gray-700'">
+                    {{ language === 'EN' ? link.labelEN : link.labelES }}
+                </a>
+
+            </nav>
+
+
+            <!-- Language -->
+            <div class="flex items-center space-x-4">
+
+                <div class="flex items-center bg-gray-100 rounded-lg p-1">
+
+                    <button (click)="setLanguage('EN')" class="px-3 py-1 rounded text-sm font-medium" [ngClass]="language === 'EN'
+              ? 'bg-white text-gray-900 shadow-sm'
+              : 'text-gray-600 hover:text-gray-900'">
+                        EN
+                    </button>
+
+                    <button (click)="setLanguage('ES')" class="px-3 py-1 rounded text-sm font-medium" [ngClass]="language === 'ES'
+              ? 'bg-white text-gray-900 shadow-sm'
+              : 'text-gray-600 hover:text-gray-900'">
+                        ES
+                    </button>
+
+                </div>
+
+                <!-- CTA -->
+                <a routerLink="/contact"
+                    class="hidden md:inline-flex bg-[#DC2626] hover:bg-[#B91C1C] text-white px-4 py-2 rounded-md text-sm font-medium">
+                    {{ language === 'EN' ? 'Get Quote' : 'Cotizar' }}
+                </a>
+
+
+                <!-- Mobile menu button -->
+                <button (click)="toggleMobileMenu()" class="lg:hidden p-2 text-gray-700 hover:text-[#DC2626]">
+                    ☰
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Mobile Menu -->
+    <div *ngIf="isMobileMenuOpen" class="lg:hidden border-t border-gray-200 bg-white">
+
+        <nav class="px-4 py-4 space-y-3">
+
+            <a *ngFor="let link of navLinks" [routerLink]="link.path" (click)="isMobileMenuOpen = false"
+                class="block px-4 py-2 rounded-lg text-sm font-medium" [ngClass]="isActive(link.path)
+          ? 'bg-[#DC2626] text-white'
+          : 'text-gray-700 hover:bg-gray-100'">
+                {{ language === 'EN' ? link.labelEN : link.labelES }}
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>

@@ -1,1 +1,155 @@
-<p>footer works!</p>
+<footer class="bg-[#374151] text-white">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Company Info -->
+            <div>
+
+                <div class="flex items-center space-x-3 mb-4">
+
+                    <div class="w-10 h-10 bg-[#DC2626] rounded-lg flex items-center justify-center">
+                        <div class="text-white font-bold">AW</div>
+                    </div>
+
+                    <div>
+                        <div class="font-bold text-lg">AgroWater</div>
+                        <div class="text-xs text-gray-300">Industrial Solutions</div>
+                    </div>
+
+                </div>
+
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    Leading provider of agricultural irrigation equipment, engines, generators,
+                    and water pumping solutions for B2B clients.
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div>
+
+                <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+
+                <ul class="space-y-2">
+
+                    <li *ngFor="let link of quickLinks">
+
+                        <a [routerLink]="link.path" class="text-sm text-gray-300 hover:text-white transition-colors">
+                            {{ link.label }}
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Product Categories -->
+            <div>
+
+                <h3 class="font-semibold text-lg mb-4">Products</h3>
+
+                <ul class="space-y-2">
+
+                    <li *ngFor="let link of productLinks">
+
+                        <a [routerLink]="link.path" class="text-sm text-gray-300 hover:text-white transition-colors">
+                            {{ link.label }}
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact Info -->
+            <div>
+
+                <h3 class="font-semibold text-lg mb-4">Contact Us</h3>
+
+                <ul class="space-y-3">
+
+                    <li class="flex items-start space-x-3">
+
+                        <span class="text-[#16a34a]">📍</span>
+
+                        <span class="text-sm text-gray-300">
+                            1234 Industrial Ave, Suite 100 <br>
+                            Agricultural District, CA 90210
+                        </span>
+
+                    </li>
+
+                    <li class="flex items-center space-x-3">
+
+                        <span class="text-[#16a34a]">📞</span>
+
+                        <span class="text-sm text-gray-300">
+                            +1 (800) 123-4567
+                        </span>
+
+                    </li>
+
+                    <li class="flex items-center space-x-3">
+
+                        <span class="text-[#16a34a]">✉</span>
+
+                        <span class="text-sm text-gray-300">
+                            info@agrowater.com
+                        </span>
+
+                    </li>
+
+                </ul>
+
+
+                <!-- Social Media -->
+
+                <div class="flex space-x-3 mt-4">
+
+                    <a
+                        class="w-9 h-9 bg-gray-700 hover:bg-[#DC2626] rounded-lg flex items-center justify-center transition-colors">
+                        f
+                    </a>
+
+                    <a
+                        class="w-9 h-9 bg-gray-700 hover:bg-[#DC2626] rounded-lg flex items-center justify-center transition-colors">
+                        t
+                    </a>
+
+                    <a
+                        class="w-9 h-9 bg-gray-700 hover:bg-[#DC2626] rounded-lg flex items-center justify-center transition-colors">
+                        in
+                    </a>
+
+                    <a
+                        class="w-9 h-9 bg-gray-700 hover:bg-[#DC2626] rounded-lg flex items-center justify-center transition-colors">
+                        ig
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom bar -->
+
+        <div class="border-t border-gray-600 mt-8 pt-8 text-center">
+
+            <p class="text-sm text-gray-400">
+                © 2026 AgroWater Industrial Solutions. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
