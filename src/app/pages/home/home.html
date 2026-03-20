@@ -213,9 +213,8 @@
                 <div *ngFor="let benefit of benefits" class="text-center group">
 
                     <!-- ICON -->
-                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6
-                       group-hover:scale-110 group-hover:rotate-6
-                       transition-all duration-300">
+                    <div
+                        class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
 
                         <lucide-icon [img]="benefit.icon" [size]="32" class="text-white">
                         </lucide-icon>
@@ -240,6 +239,91 @@
 
     </section>
 
+    <!-- IRRIGATION SYSTEMS IN ACTION -->
+
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <!-- TEXTO -->
+                <div class="order-2 lg:order-1">
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Advanced Irrigation Technology for Modern Agriculture
+                    </h2>
+
+                    <p class="text-lg text-gray-600 mb-6">
+                        Our irrigation systems are designed to maximize water efficiency while ensuring optimal crop
+                        growth.
+                        With decades of experience, we provide complete solutions tailored to your agricultural needs.
+                    </p>
+
+                    <!-- LISTA -->
+                    <ul class="space-y-4 mb-8">
+
+                        <li class="flex items-start">
+                            <lucide-icon [img]="CheckCircle2" class="text-green-600 mr-3 mt-1 flex-shrink-0"
+                                [size]="20">
+                            </lucide-icon>
+
+                            <span class="text-gray-700">
+                                Water-saving technology reduces consumption by up to 40%
+                            </span>
+                        </li>
+
+                        <li class="flex items-start">
+                            <lucide-icon [img]="CheckCircle2" class="text-green-600 mr-3 mt-1 flex-shrink-0"
+                                [size]="20">
+                            </lucide-icon>
+
+                            <span class="text-gray-700">
+                                Automated controls for precise water distribution
+                            </span>
+                        </li>
+
+                        <li class="flex items-start">
+                            <lucide-icon [img]="CheckCircle2" class="text-green-600 mr-3 mt-1 flex-shrink-0"
+                                [size]="20">
+                            </lucide-icon>
+
+                            <span class="text-gray-700">
+                                Durable components designed for long-term operation
+                            </span>
+                        </li>
+
+                    </ul>
+
+                    <!-- BOTÓN -->
+                    <a routerLink="/products"
+                        class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors">
+                        Learn More
+
+                        <lucide-icon [img]="ChevronRight" class="ml-2" [size]="18">
+                        </lucide-icon>
+                    </a>
+
+                </div>
+
+                <!-- IMAGEN -->
+                <div class="order-1 lg:order-2">
+
+                    <div class="rounded-lg overflow-hidden shadow-2xl">
+
+                        <img [src]="farmFieldImage" alt="Agricultural Field with Irrigation"
+                            class="w-full h-[400px] object-cover" />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
     <!-- PARTNERS -->
 
     <section class="py-20 bg-gray-50">
@@ -252,9 +336,52 @@
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
 
-                <div *ngFor="let partner of partners" class="bg-white border p-6 rounded-lg">
-                    {{partner}}
+                <div *ngFor="let partner of partners" class="bg-white border border-gray-200 p-6 rounded-lg
+         hover:border-red-600 hover:shadow-md hover:-translate-y-1
+         transition-all duration-300"> {{partner}}
                 </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA SECTION -->
+
+    <section class="py-16 md:py-24 bg-[#DC2626] text-white relative overflow-hidden">
+
+        <!-- Fondo con imagen -->
+        <div class="absolute inset-0 opacity-10">
+            <img [src]="warehouseImage" alt="Warehouse" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Contenido -->
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Ready to Upgrade Your Agricultural Operations?
+            </h2>
+
+            <p class="text-lg md:text-xl mb-8 text-gray-100">
+                Get in touch with our team for a custom solution tailored to your business needs
+            </p>
+
+            <!-- BOTONES -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+                <!-- BOTÓN 1 -->
+                <a routerLink="/contact"
+                    class="bg-white text-[#DC2626] hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Request a Quote
+                </a>
+
+                <!-- BOTÓN 2 -->
+                <a routerLink="/products"
+                    class="border-2 border-white text-white hover:bg-white hover:text-[#DC2626] px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Browse Catalog
+                </a>
 
             </div>
 

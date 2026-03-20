@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { LucideAngularModule, Target, Eye, Award, Users, Globe, TrendingUp } from 'lucide-angular'; 
 interface Value {
-  icon: string; // ruta o nombre de icono SVG inline
+  icon: any; // ruta o nombre de icono SVG inline
   title: string;
   description: string;
 }
@@ -14,7 +14,7 @@ interface Stat {
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule],
+  imports: [CommonModule, LucideAngularModule],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
@@ -25,22 +25,22 @@ export class AboutComponent {
 
   values: Value[] = [
     {
-      icon: 'award',
+      icon: Award,
       title: 'Quality Excellence',
       description: 'We source and deliver only the highest quality industrial equipment from trusted global manufacturers.'
     },
     {
-      icon: 'users',
+      icon: Users,
       title: 'Customer Focus',
       description: 'Our dedicated team works closely with clients to understand their needs and provide tailored solutions.'
     },
     {
-      icon: 'globe',
+      icon: Globe,
       title: 'Global Reach',
       description: 'Partnering with leading manufacturers worldwide to bring the best technology to our clients.'
     },
     {
-      icon: 'trending-up',
+      icon: TrendingUp,
       title: 'Innovation',
       description: 'Continuously adopting the latest technologies to improve efficiency and sustainability.'
     }

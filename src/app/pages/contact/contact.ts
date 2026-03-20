@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { Component, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import emailjs from '@emailjs/browser';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule],
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact.html',
-  styleUrl: './contact.css',
+  styleUrls: ['./contact.css'],
 })
 export class ContactComponent {
+
   formData = {
     name: '',
     email: '',
@@ -20,13 +23,27 @@ export class ContactComponent {
 
   sending = false;
 
-  // Reemplaza estos valores con tus datos de EmailJS
-  serviceID = 'your_service_id';
-  templateID = 'your_template_id';
-  publicKey = 'your_public_key'; // antes se llamaba user_id
+  // 🔥 MODAL
+  showModal = false;
+  modalMessage = '';
+  modalType: 'success' | 'error' = 'success';
+  isClosing = false;
 
-  handleSubmit(e: Event) {
-    e.preventDefault();
+  serviceID = 'service_lssacwj';
+  templateID = 'template_t7xpk7j';
+  publicKey = '_UNwHRPCIJCUosfMI';
+
+  handleSubmit(form: any) {
+
+    // ✅ VALIDACIÓN
+    if (!this.formData.name || !this.formData.email || !this.formData.message) {
+      this.modalMessage = 'Por favor completa los campos obligatorios';
+      this.modalType = 'error';
+      this.showModal = true;
+      this.autoCloseModal();
+      return;
+    }
+
     this.sending = true;
 
     const templateParams = {
@@ -39,26 +56,83 @@ export class ContactComponent {
       to_email: 'clip.fre@gmail.com',
     };
 
-    emailjs
-      .send(this.serviceID, this.templateID, templateParams, this.publicKey)
-      .then((response: EmailJSResponseStatus) => {
-        alert('Mensaje enviado correctamente. Te contactaremos pronto.');
-        this.formData = { name: '', email: '', phone: '', company: '', subject: '', message: '' };
-        this.sending = false;
-      })
-      .catch((err) => {
-        console.error('Error al enviar el correo:', err);
-        alert('Hubo un error al enviar el mensaje. Intenta nuevamente.');
-        this.sending = false;
-      });
+    emailjs.send(
+      this.serviceID,
+      this.templateID,
+      templateParams,
+      {
+        publicKey: this.publicKey
+      }
+    )
+    .then((response) => {
+
+      console.log('SUCCESS!', response.status, response.text);
+
+      // ✅ MODAL ÉXITO
+      this.modalMessage = 'Mensaje enviado correctamente. Te contactaremos pronto.';
+      this.modalType = 'success';
+      this.showModal = true;
+
+      form.resetForm(); // 🔥 CLAVE
+
+      // ✅ LIMPIAR FORMULARIO
+      // this.formData = {
+      //   name: '',
+      //   email: '',
+      //   phone: '',
+      //   company: '',
+      //   subject: '',
+      //   message: '',
+      // };
+
+      this.autoCloseModal();
+      this.sending = false;
+    })
+    .catch((err) => {
+
+      console.error('Error al enviar el correo:', err);
+
+      // ❌ MODAL ERROR
+      this.modalMessage = 'Hubo un error al enviar el mensaje. Intenta nuevamente.';
+      this.modalType = 'error';
+      this.showModal = true;
+
+      this.autoCloseModal();
+      this.sending = false;
+    });
   }
 
-  handleChange(event: any) {
-    const target = event.target as HTMLInputElement | HTMLTextAreaElement;
-    const key = target.name as keyof typeof this.formData;
-    this.formData[key] = target.value;
+  // 🔥 AUTO-CIERRE + LIMPIEZA DEL MODAL
+  autoCloseModal() {
+    const duration = this.modalType === 'success' ? 2500 : 4000;
+
+    setTimeout(() => {
+      this.resetModal();
+    }, duration);
+  }
+
+  // 🔥 RESET COMPLETO DEL MODAL (con animación)
+  resetModal() {
+    this.isClosing = true;
+
+    setTimeout(() => {
+      this.showModal = false;
+      this.isClosing = false;
+      this.modalMessage = '';
+      this.modalType = 'success';
+    }, 300);
+  }
+
+  // 🔒 Cierre manual
+  closeModal() {
+    this.resetModal();
+  }
+
+  // ⌨️ Cerrar con ESC
+  @HostListener('document:keydown.escape')
+  handleEsc() {
+    if (this.showModal) {
+      this.closeModal();
+    }
   }
 }
-
-
-// Crear cuenta en EmailJS para obtener serviceID, templateID y publicKey (user_id) y reemplazar los valores en el código.

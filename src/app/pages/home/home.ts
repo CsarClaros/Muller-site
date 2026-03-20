@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ProductCard } from '../../components/product-card/product-card';
-import { LucideAngularModule, Settings, Zap, Droplets,Shield, TrendingUp, Award } from 'lucide-angular';
+import { LucideAngularModule, Settings, Zap, Droplets,Shield, TrendingUp, Award, CheckCircle2, ChevronRight } from 'lucide-angular';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [NgFor, RouterModule, ProductCard, LucideAngularModule],
+  
   templateUrl: './home.html'
 })
 export class HomeComponent {
@@ -107,5 +108,6 @@ export class HomeComponent {
     "Kubota",
     "Yanmar"
   ];
-
+  CheckCircle2 = CheckCircle2;
+  ChevronRight = ChevronRight;
 }
