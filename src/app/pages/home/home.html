@@ -1,1 +1,265 @@
-<p>home works!</p>
+<div class="bg-white">
+
+    <!-- HERO -->
+
+    <section class="relative h-[600px] md:h-[700px] overflow-hidden">
+
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10"></div>
+
+        <img [src]="heroImage" class="absolute inset-0 w-full h-full object-cover" />
+
+        <div class="relative z-20 max-w-7xl mx-auto px-4 h-full flex items-center">
+
+            <div class="max-w-2xl">
+
+                <h1 class="text-5xl font-bold text-white mb-6">
+                    Industrial Irrigation & Power Solutions
+                </h1>
+
+                <p class="text-xl text-gray-200 mb-8">
+                    Leading provider of agricultural irrigation equipment, diesel engines,
+                    generators, and water pumping solutions for B2B clients worldwide.
+                </p>
+
+                <div class="flex gap-4">
+
+                    <a routerLink="/products" class="bg-red-600 text-white px-8 py-3 rounded-lg">
+                        Explore Products
+                    </a>
+
+                    <a routerLink="/contact" class="border border-white text-white px-8 py-3 rounded-lg">
+                        Request Quote
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCT CATEGORIES -->
+
+    <section class="py-16 md:py-24 bg-gray-50">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- TITULO -->
+            <div class="text-center mb-12">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Our Product Categories
+                </h2>
+
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Comprehensive solutions for agricultural and industrial power needs
+                </p>
+
+            </div>
+
+            <!-- GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <a *ngFor="let category of categories" routerLink="/products" class="group">
+
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md
+                   hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02]
+                   transition-all duration-300 ease-out">
+
+                        <!-- IMAGE -->
+                        <div class="relative aspect-[16/10] overflow-hidden bg-gray-100">
+
+                            <img [src]="category.image" class="w-full h-full object-cover
+                       group-hover:scale-110
+                       transition-transform duration-500 ease-out" />
+
+                            <!-- OVERLAY (NUEVO) -->
+                            <div class="absolute inset-0 bg-black/0
+                       group-hover:bg-black/20
+                       transition-all duration-300"></div>
+
+                        </div>
+
+                        <!-- CONTENT -->
+                        <div class="p-6">
+
+                            <!-- ICON -->
+                            <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4
+                       group-hover:bg-red-600 group-hover:rotate-6 group-hover:scale-110
+                       transition-all duration-300">
+
+                                <lucide-icon [img]="category.icon" class="text-white" [size]="24">
+                                </lucide-icon>
+
+                            </div>
+
+                            <!-- TITLE -->
+                            <h3 class="text-xl font-bold text-gray-900 mb-2
+                       group-hover:text-red-600
+                       transition-colors duration-300">
+                                {{ category.title }}
+                            </h3>
+
+                            <!-- DESCRIPTION -->
+                            <p class="text-gray-600">
+                                {{ category.description }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <!-- <section class="py-20 bg-gray-50">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <h2 class="text-4xl font-bold text-center mb-12">
+                Our Product Categories
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <a routerLink="/products" *ngFor="let category of categories" class="group">
+
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md">
+
+                        <img [src]="category.image" class="w-full h-48 object-cover" />
+
+                        <div class="p-6">
+
+                            <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+
+                                <lucide-icon [img]="category.icon" class="text-white" [size]="24">
+                                </lucide-icon>
+
+                            </div>
+
+                            <h3 class="text-xl font-bold mb-2">
+                                {{category.title}}
+                            </h3>
+
+                            <p class="text-gray-600">
+                                {{category.description}}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section> -->
+
+
+    <!-- FEATURED PRODUCTS -->
+
+    <section class="py-20">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <h2 class="text-4xl font-bold mb-12">
+                Featured Products
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <app-product-card *ngFor="let product of featuredProducts" [id]="product.id" [name]="product.name"
+                    [category]="product.category" [description]="product.description" [image]="product.image">
+                </app-product-card>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BENEFITS -->
+
+    <section class="py-16 md:py-24 bg-gray-700 text-white">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-12">
+
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Why Choose AgroWater?
+                </h2>
+
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                    Industry-leading quality and service you can trust
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div *ngFor="let benefit of benefits" class="text-center group">
+
+                    <!-- ICON -->
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6
+                       group-hover:scale-110 group-hover:rotate-6
+                       transition-all duration-300">
+
+                        <lucide-icon [img]="benefit.icon" [size]="32" class="text-white">
+                        </lucide-icon>
+
+                    </div>
+
+                    <!-- TITLE -->
+                    <h3 class="text-xl font-bold mb-3">
+                        {{ benefit.title }}
+                    </h3>
+
+                    <!-- DESCRIPTION -->
+                    <p class="text-gray-300">
+                        {{ benefit.description }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PARTNERS -->
+
+    <section class="py-20 bg-gray-50">
+
+        <div class="max-w-7xl mx-auto px-4 text-center">
+
+            <h2 class="text-3xl font-bold mb-10">
+                Trusted by Industry Leaders
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+
+                <div *ngFor="let partner of partners" class="bg-white border p-6 rounded-lg">
+                    {{partner}}
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

@@ -1,83 +1,152 @@
 <div class="bg-white min-h-screen">
-    <!-- Page Header -->
+
+    <!-- Header -->
+
     <div class="bg-[#374151] text-white py-12 md:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Our Products</h1>
+
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                Our Products
+            </h1>
+
             <p class="text-lg text-gray-300 max-w-2xl">
-                Browse our comprehensive catalog of industrial irrigation equipment, engines, generators, and water
-                pumping solutions
+                Browse our catalog of irrigation equipment, engines,
+                generators and water pumps.
             </p>
+
         </div>
     </div>
 
-    <!-- Products Content -->
+
+    <!-- Content -->
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
         <div class="flex flex-col lg:flex-row gap-8">
 
-            <!-- Sidebar Filters - Desktop -->
-            <aside class="hidden lg:block w-64 flex-shrink-0">
-                <div class="bg-white border border-gray-200 rounded-lg p-6 sticky top-24">
-                    <div class="flex items-center mb-6">
-                        <lucide-icon [name]="'filter'" class="mr-2 text-[#DC2626]" [size]="20"></lucide-icon>
-                        <h2 class="font-bold text-lg">Categories</h2>
-                    </div>
+            <!-- Sidebar -->
+
+            <aside class="hidden lg:block w-64">
+
+                <div class="border rounded-lg p-6 sticky top-24">
+
+                    <h2 class="font-bold text-lg mb-4">
+                        Categories
+                    </h2>
+
                     <div class="space-y-2">
+
                         <button *ngFor="let category of categories" (click)="selectCategory(category)"
-                            [ngClass]="selectedCategory() === category ? 'bg-[#DC2626] text-white' : 'text-gray-700 hover:bg-gray-100'"
-                            class="w-full text-left px-4 py-2.5 rounded-lg transition-colors">
+                            class="w-full text-left px-4 py-2 rounded-lg transition-colors"
+                            [class.bg-red-600]="selectedCategory === category"
+                            [class.text-white]="selectedCategory === category">
                             {{ category }}
                         </button>
+
                     </div>
+
                 </div>
+
             </aside>
 
-            <!-- Botón de filtro móvil -->
-            <button (click)="toggleMobileFilters()"
-                class="w-full bg-[#DC2626] hover:bg-[#B91C1C] text-white flex items-center justify-center">
-                <lucide-icon [name]="'filter'" class="mr-2" [size]="18"></lucide-icon>
-                Filter by Category
-            </button>
 
-            <!-- Mobile Filters Modal -->
-            <div *ngIf="showMobileFilters()" class="lg:hidden fixed inset-0 bg-black/50 z-50 flex items-end">
-                <div class="bg-white w-full rounded-t-2xl p-6 max-h-[80vh] overflow-y-auto">
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 class="font-bold text-lg">Filter by Category</h2>
-                        <!-- Botón cerrar modal -->
-                        <button (click)="showMobileFilters.set(false)">
-                            <lucide-icon [name]="'x'" [size]="24" class="text-gray-600"></lucide-icon>
+            <!-- Mobile filter button -->
+
+            <div class="lg:hidden">
+
+                <button (click)="toggleMobileFilters()" class="w-full bg-red-600 text-white py-3 rounded-lg">
+                    Filter by Category
+                </button>
+
+            </div>
+
+
+            <!-- Mobile filters -->
+
+            <div *ngIf="showMobileFilters" class="lg:hidden fixed inset-0 bg-black/50 z-50 flex items-end">
+
+                <div class="bg-white w-full rounded-t-2xl p-6">
+
+                    <div class="flex justify-between mb-6">
+
+                        <h2 class="font-bold text-lg">
+                            Filter by Category
+                        </h2>
+
+                        <button (click)="toggleMobileFilters()">
+                            ✕
                         </button>
+
                     </div>
+
                     <div class="space-y-2">
-                        <button *ngFor="let category of categories" (click)="selectCategory(category)"
-                            [ngClass]="selectedCategory() === category ? 'bg-[#DC2626] text-white' : 'text-gray-700 hover:bg-gray-100'"
-                            class="w-full text-left px-4 py-3 rounded-lg transition-colors">
+
+                        <button *ngFor="let category of categories"
+                            (click)="selectCategory(category); toggleMobileFilters()"
+                            class="w-full text-left px-4 py-3 rounded-lg"
+                            [class.bg-red-600]="selectedCategory === category"
+                            [class.text-white]="selectedCategory === category">
                             {{ category }}
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- Products Grid -->
+
+            <!-- Products -->
+
             <div class="flex-1">
-                <div class="mb-6 flex items-center justify-between">
+
+                <div class="mb-6 flex justify-between">
+
                     <p class="text-gray-600">
-                        Showing <span class="font-semibold">{{ filteredProducts.length }}</span> products
+                        Showing
+                        <span class="font-semibold">
+                            {{ filteredProducts.length }}
+                        </span>
+                        products
                     </p>
+
                     <div class="hidden md:block text-sm text-gray-600">
-                        Category: <span class="font-semibold text-[#DC2626]">{{ selectedCategory() }}</span>
+
+                        Category:
+                        <span class="font-semibold text-red-600">
+                            {{ selectedCategory }}
+                        </span>
+
                     </div>
+
                 </div>
+
+
+                <!-- Grid -->
 
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
                     <app-product-card *ngFor="let product of filteredProducts" [id]="product.id" [name]="product.name"
-                        [category]="product.category" [description]="product.description" [image]="product.image"></app-product-card>
+                        [category]="product.category" [description]="product.description" [image]="product.image">
+                    </app-product-card>
+
                 </div>
 
+
+                <!-- Empty state -->
+
                 <div *ngIf="filteredProducts.length === 0" class="text-center py-16">
-                    <p class="text-gray-500 text-lg">No products found in this category</p>
+
+                    <p class="text-gray-500 text-lg">
+                        No products found in this category
+                    </p>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>

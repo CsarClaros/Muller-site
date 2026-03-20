@@ -1,66 +1,85 @@
-import { Component,signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
 import { ProductCard } from '../../components/product-card/product-card';
-import { Button } from '../../components/ui/button/button';
-import { LucideAngularModule } from 'lucide-angular';
-import { CommonModule } from '@angular/common';
-import { Filter, X } from 'lucide-angular';
-
-interface Product {
-  id: string;
-  name: string;
-  category: string;
-  description: string;
-  image: string;
-}
 
 @Component({
   selector: 'app-products',
-  imports: [ CommonModule, ProductCard, LucideAngularModule],
-  templateUrl: './products.html',
-  styleUrl: './products.css',
+  standalone: true,
+  imports: [NgFor, NgIf, ProductCard],
+  templateUrl: './products.html'
 })
 export class ProductsComponent {
-  heroImage =
-    'https://images.unsplash.com/photo-1690100693182-e6d7fe91bc38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpcnJpZ2F0aW9uJTIwd2F0ZXIlMjBzcHJpbmtsZXIlMjBmYXJtfGVufDF8fHx8MTc3MzE3ODU3M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral';
-  engineImage = '...'; // continuar con los demás links
-  generatorImage = '...';
-  pumpImage = '...';
 
-  allProducts: Product[] = [
-    {
-      id: 'diesel-engine-450hp',
-      name: 'Industrial Diesel Engine 450HP',
-      category: 'Engines',
-      description: 'Heavy-duty diesel engine...',
-      image: this.engineImage,
-    },
-    {
-      id: 'diesel-engine-300hp',
-      name: 'Agricultural Diesel Engine 300HP',
-      category: 'Engines',
-      description: 'Fuel-efficient diesel engine...',
-      image: this.engineImage,
-    },
-    // agregar todos los demás productos...
+  heroImage = "https://images.unsplash.com/photo-1690100693182-e6d7fe91bc38";
+  engineImage = "https://images.unsplash.com/photo-1766842996145-464b9bed0493";
+  generatorImage = "https://images.unsplash.com/photo-1705051278299-7e64ba21437a";
+  pumpImage = "https://images.unsplash.com/photo-1772588047051-c35d272b5d9c";
+
+  categories = [
+    "All Products",
+    "Engines",
+    "Generators",
+    "Water Pumps",
+    "Irrigation"
   ];
 
-  categories = ['All Products', 'Engines', 'Generators', 'Water Pumps', 'Irrigation'];
+  selectedCategory = "All Products";
+  showMobileFilters = false;
 
-  selectedCategory = signal('All Products');
-  showMobileFilters = signal(false);
+  allProducts = [
+    {
+      id: "diesel-engine-450hp",
+      name: "Industrial Diesel Engine 450HP",
+      category: "Engines",
+      description: "Heavy-duty diesel engine designed for continuous operation in demanding agricultural environments.",
+      image: this.engineImage
+    },
+    {
+      id: "diesel-engine-300hp",
+      name: "Agricultural Diesel Engine 300HP",
+      category: "Engines",
+      description: "Fuel-efficient diesel engine optimized for farm equipment and irrigation systems.",
+      image: this.engineImage
+    },
+    {
+      id: "generator-500kva",
+      name: "Power Generator 500 KVA",
+      category: "Generators",
+      description: "Industrial-grade generator with automatic start and fuel-efficient operation.",
+      image: this.generatorImage
+    },
+    {
+      id: "centrifugal-pump-200hp",
+      name: "Centrifugal Water Pump 200HP",
+      category: "Water Pumps",
+      description: "High-capacity centrifugal pump for large-scale irrigation systems.",
+      image: this.pumpImage
+    },
+    {
+      id: "irrigation-system-pro",
+      name: "Complete Irrigation System Pro",
+      category: "Irrigation",
+      description: "Automated drip irrigation system with smart water management technology.",
+      image: this.heroImage
+    }
+  ];
 
   get filteredProducts() {
-    return this.selectedCategory() === 'All Products'
-      ? this.allProducts
-      : this.allProducts.filter((p) => p.category === this.selectedCategory());
+    if (this.selectedCategory === "All Products") {
+      return this.allProducts;
+    }
+
+    return this.allProducts.filter(
+      p => p.category === this.selectedCategory
+    );
   }
 
   selectCategory(category: string) {
-    this.selectedCategory.set(category);
-    this.showMobileFilters.set(false);
+    this.selectedCategory = category;
   }
 
   toggleMobileFilters() {
-    this.showMobileFilters.update((v) => !v);
+    this.showMobileFilters = !this.showMobileFilters;
   }
+
 }
