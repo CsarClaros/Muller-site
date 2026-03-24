@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './product-card.css',
 })
 export class ProductCard {
-  @Input() id!: string;
+  @Input() id!: number;
   @Input() name!: string;
   @Input() category!: string;
   @Input() description!: string;
@@ -21,7 +21,7 @@ export class ProductCard {
     this.router.navigate(['/products', this.id]);
   }
 
-  handleImageError(event: any) {
-    event.target.src = 'assets/fallback.png'; // Ruta de imagen fallback
-  }
+  // handleImageError(event: any) {
+  //   event.target.src = 'assets/fallback.png'; // Ruta de imagen fallback
+  // }
 }

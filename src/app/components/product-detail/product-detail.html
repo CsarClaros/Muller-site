@@ -31,13 +31,15 @@
             <!-- Gallery -->
 
             <div>
-                <img [src]="product.images[selectedImage]" class="w-full h-[500px] object-cover rounded-lg mb-4" />
+                <img [src]="product.image[selectedImage]" class="w-full h-[500px] object-cover rounded-lg mb-4" />
 
                 <div class="grid grid-cols-3 gap-4">
-                    <button *ngFor="let img of product.images; let i = index" (click)="selectImage(i)"
-                        class="border-2 rounded-lg overflow-hidden" [class.border-red-600]="selectedImage === i">
-                        <img [src]="img" class="w-full h-24 object-cover" />
-                    </button>
+                    @for (img of product.image; track $index) {
+                        <button (click)="selectImage($index)" class="border-2 rounded-lg overflow-hidden"
+                            [class.border-red-600]="selectedImage === $index">
+                            <img [src]="img" class="w-full h-24 object-cover" />
+                        </button>
+                    }
                 </div>
             </div>
 
@@ -74,11 +76,13 @@
                     <h3 class="font-bold mb-4">Key Features</h3>
 
                     <ul class="space-y-3">
-                        <li *ngFor="let feature of product.features" class="flex items-start">
+                        @for (feature of product.features; track $index) {
+                        <li class="flex items-start">
                             <span class="text-green-600 mr-3">✔</span>
 
                             {{ feature }}
                         </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -91,7 +95,8 @@
 
             <div class="border rounded-lg overflow-hidden">
                 <div class="grid md:grid-cols-2">
-                    <div *ngFor="let spec of product.specifications | keyvalue" class="p-4 border-b">
+                    @for (spec of product.specs | keyvalue; track spec.key) {
+                    <div class="p-4 border-b">
                         <div class="font-semibold">
                             {{ spec.key }}
                         </div>
@@ -100,6 +105,7 @@
                             {{ spec.value }}
                         </div>
                     </div>
+                    }
                 </div>
             </div>
         </div>
@@ -110,9 +116,11 @@
             <h2 class="text-2xl font-bold mb-6">Related Products</h2>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <app-product-card *ngFor="let product of relatedProducts" [id]="product.id" [name]="product.name"
-                    [category]="product.category" [description]="product.description" [image]="product.image">
+                @for (product of relatedProducts; track product.id) {
+                <app-product-card [id]="product.id" [name]="product.name" [category]="product.category"
+                    [description]="product.description" [image]="product.image">
                 </app-product-card>
+                }
             </div>
         </div>
     </div>

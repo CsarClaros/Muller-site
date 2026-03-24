@@ -3,6 +3,7 @@ import { NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ProductCard } from '../../components/product-card/product-card';
 import { LucideAngularModule, Settings, Zap, Droplets,Shield, TrendingUp, Award, CheckCircle2, ChevronRight } from 'lucide-angular';
+import { PRODUCTOS, Producto } from '../../data/producto';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,21 @@ import { LucideAngularModule, Settings, Zap, Droplets,Shield, TrendingUp, Award,
   templateUrl: './home.html'
 })
 export class HomeComponent {
+
+  constructor() {
+
+    const categorias = [
+      "Motores",
+      "Generadores",
+      "Bombas",
+      "Hidrolavadoras"
+    ];
+  
+    this.featuredProducts = categorias
+      .map(cat => PRODUCTOS.find(p => p.category === cat))
+      .filter((p): p is Producto => p !== undefined);
+  
+  }
 
   icons = {
     Settings,
@@ -47,40 +63,7 @@ export class HomeComponent {
     },
   ];
 
-  featuredProducts = [
-    {
-      id: "diesel-engine-450hp",
-      name: "Industrial Diesel Engine 450HP",
-      category: "Engines",
-      description: "Heavy-duty diesel engine designed for continuous operation in demanding agricultural environments.",
-      image: this.engineImage,
-      price: "Request Quote",
-    },
-    {
-      id: "generator-500kva",
-      name: "Power Generator 500 KVA",
-      category: "Generators",
-      description: "Industrial-grade generator with automatic start and fuel-efficient operation.",
-      image: this.generatorImage,
-      price: "Request Quote",
-    },
-    {
-      id: "centrifugal-pump-200hp",
-      name: "Centrifugal Water Pump 200HP",
-      category: "Water Pumps",
-      description: "High-capacity centrifugal pump for large-scale irrigation systems.",
-      image: this.pumpImage,
-      price: "Request Quote",
-    },
-    {
-      id: "irrigation-system-pro",
-      name: "Complete Irrigation System Pro",
-      category: "Irrigation",
-      description: "Automated drip irrigation system with smart water management technology.",
-      image: this.heroImage,
-      price: "Request Quote",
-    },
-  ];
+  featuredProducts: Producto[] = [];
 
   benefits = [
     {
