@@ -24,16 +24,38 @@ export class ProductDetail {
   relatedProducts: Producto[] = [];
 
   constructor(private route: ActivatedRoute) {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-
-    this.product = PRODUCTOS.find(p => p.id === id);
-
-    if(this.product){
-      this.relatedProducts = PRODUCTOS.filter(p => p.category === this.product!.category && p.id !== this.product!.id).slice(0,3);
-    }
+    this.route.paramMap.subscribe(params => {
+      const id = Number(params.get('id'));
+      this.loadProduct(id);
+    });
   }
 
+  loadProduct(id: number) {
+
+    this.product = PRODUCTOS.find(p => p.id === id);
+  
+    if (this.product) {
+      this.relatedProducts = PRODUCTOS
+        .filter(p => p.category === this.product!.category && p.id !== this.product!.id)
+        .slice(0, 3);
+    }
+  
+    this.selectedImage = 0;
+  }
+
+  animateImage = true;
+
   selectImage(index: number) {
+
+    if (index === this.selectedImage) return;
+
     this.selectedImage = index;
+
+    this.animateImage = false;
+
+    setTimeout(() => {
+      this.animateImage = true;
+    }, 10);
+
   }
 }

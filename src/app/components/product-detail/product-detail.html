@@ -3,13 +3,16 @@
     <div class="text-center">
         <h2 class="text-2xl font-bold mb-4">Product Not Found</h2>
 
-        <a routerLink="/products" class="text-red-600 font-semibold"> Back to Products </a>
+        <a routerLink="/products" class="text-red-600 font-semibold">
+            Back to Products
+        </a>
     </div>
 </div>
 }
 
 @if (product) {
 <div class="bg-white min-h-screen">
+
     <!-- Breadcrumb -->
 
     <div class="bg-gray-50 border-b">
@@ -25,34 +28,69 @@
     </div>
 
     <div class="max-w-7xl mx-auto px-4 py-12">
-        <a routerLink="/products" class="text-sm text-gray-600 mb-6 block"> ← Back to Products </a>
+
+        <a routerLink="/products" class="text-sm text-gray-600 mb-6 block">
+            ← Back to Products
+        </a>
 
         <div class="grid lg:grid-cols-2 gap-12">
-            <!-- Gallery -->
+
+            <!-- PRODUCT GALLERY -->
 
             <div>
-                <img [src]="product.image[selectedImage]" class="w-full h-[500px] object-cover rounded-lg mb-4" />
 
-                <div class="grid grid-cols-3 gap-4">
-                    @for (img of product.image; track $index) {
-                        <button (click)="selectImage($index)" class="border-2 rounded-lg overflow-hidden"
-                            [class.border-red-600]="selectedImage === $index">
-                            <img [src]="img" class="w-full h-24 object-cover" />
-                        </button>
+                <div class="overflow-hidden rounded-lg">
+
+                    @for (img of product.gallery; track $index) {
+                    @if ($index === selectedImage) {
+
+                    <img [src]="img" class="w-full h-[500px] object-cover fade-image" />
+
                     }
+                    }
+
                 </div>
+
+                <div class="grid grid-cols-3 gap-4 mt-4">
+
+                    @for (img of product.gallery; track $index) {
+
+                    <button (click)="selectImage($index)"
+                        class="border-2 rounded-lg overflow-hidden transition-all duration-300"
+                        [class.border-red-600]="selectedImage === $index">
+                        <img [src]="img"
+                            class="w-full h-24 object-cover hover:scale-110 transition-transform duration-300" />
+                    </button>
+
+                    }
+
+                </div>
+
             </div>
 
-            <!-- Product info -->
+            <!-- PRODUCT INFO -->
 
             <div>
+
+                <!-- Category -->
+
                 <div class="text-sm font-semibold text-green-600 mb-2 uppercase">
                     {{ product.category }}
                 </div>
 
-                <h1 class="text-3xl font-bold mb-4">
+                <!-- Name -->
+
+                <h1 class="text-3xl font-bold mb-2">
                     {{ product.name }}
                 </h1>
+
+                <!-- Model -->
+
+                <div class="text-gray-500 mb-6">
+                    Model: <span class="font-semibold">{{ product.model }}</span>
+                </div>
+
+                <!-- Description -->
 
                 <p class="text-gray-600 mb-8">
                     {{ product.description }}
@@ -61,68 +99,101 @@
                 <!-- Buttons -->
 
                 <div class="flex gap-4 mb-8 flex-wrap">
-                    <a routerLink="/contact" class="bg-red-600 text-white px-6 py-3 rounded-lg">
+
+                    <a routerLink="/contact"
+                        class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition">
                         Request Quote
                     </a>
 
-                    <a href="tel:+18001234567" class="border border-red-600 text-red-600 px-6 py-3 rounded-lg">
+                    <a href="tel:+18001234567"
+                        class="border border-red-600 text-red-600 px-6 py-3 rounded-lg hover:bg-red-50 transition">
                         Call Now
                     </a>
+
                 </div>
 
-                <!-- Features -->
+                <!-- FEATURES -->
 
                 <div class="bg-gray-50 rounded-lg p-6">
                     <h3 class="font-bold mb-4">Key Features</h3>
 
                     <ul class="space-y-3">
+
                         @for (feature of product.features; track $index) {
+
                         <li class="flex items-start">
                             <span class="text-green-600 mr-3">✔</span>
 
                             {{ feature }}
                         </li>
+
                         }
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
 
-        <!-- Specifications -->
+        <!-- TECHNICAL SPECIFICATIONS -->
 
         <div class="mt-16">
-            <h2 class="text-2xl font-bold mb-6">Technical Specifications</h2>
+
+            <h2 class="text-2xl font-bold mb-6">
+                Technical Specifications
+            </h2>
 
             <div class="border rounded-lg overflow-hidden">
+
                 <div class="grid md:grid-cols-2">
+
                     @for (spec of product.specs | keyvalue; track spec.key) {
-                    <div class="p-4 border-b">
-                        <div class="font-semibold">
+
+                    <div class="p-4 border-b flex justify-between">
+
+                        <div class="font-semibold capitalize">
                             {{ spec.key }}
                         </div>
 
                         <div class="text-gray-600">
                             {{ spec.value }}
                         </div>
+
                     </div>
+
                     }
+
                 </div>
+
             </div>
+
         </div>
 
-        <!-- Related -->
+        <!-- RELATED PRODUCTS -->
 
         <div class="mt-16">
-            <h2 class="text-2xl font-bold mb-6">Related Products</h2>
+
+            <h2 class="text-2xl font-bold mb-6">
+                Related Products
+            </h2>
 
             <div class="grid md:grid-cols-3 gap-6">
+
                 @for (product of relatedProducts; track product.id) {
+
                 <app-product-card [id]="product.id" [name]="product.name" [category]="product.category"
                     [description]="product.description" [image]="product.image">
                 </app-product-card>
+
                 }
+
             </div>
+
         </div>
+
     </div>
+
 </div>
 }

@@ -2,68 +2,70 @@ import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ProductCard } from '../../components/product-card/product-card';
-import { LucideAngularModule, Settings, Zap, Droplets,Shield, TrendingUp, Award, CheckCircle2, ChevronRight } from 'lucide-angular';
+import { LucideAngularModule, Settings, Zap, Droplets, Shield, TrendingUp, Award, CheckCircle2, ChevronRight, Tractor, } from 'lucide-angular';
 import { PRODUCTOS, Producto } from '../../data/producto';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [NgFor, RouterModule, ProductCard, LucideAngularModule],
-  
+
   templateUrl: './home.html'
 })
 export class HomeComponent {
 
-  constructor() {
-
-    const categorias = [
-      "Motores",
-      "Generadores",
-      "Bombas",
-      "Hidrolavadoras"
-    ];
-  
-    this.featuredProducts = categorias
-      .map(cat => PRODUCTOS.find(p => p.category === cat))
-      .filter((p): p is Producto => p !== undefined);
-  
-  }
 
   icons = {
     Settings,
     Zap,
-    Droplets
+    Droplets,
+    Tractor
   };
 
-  heroImage = "https://images.unsplash.com/photo-1690100693182-e6d7fe91bc38";
-  engineImage = "https://images.unsplash.com/photo-1766842996145-464b9bed0493";
-  generatorImage = "https://images.unsplash.com/photo-1705051278299-7e64ba21437a";
-  pumpImage = "https://images.unsplash.com/photo-1772588047051-c35d272b5d9c";
-  farmFieldImage = "https://images.unsplash.com/photo-1684229864513-8399b70a838d";
+  heroImage = "assets/images/home/hero.webp";
+  engineImage = "assets/images/our_products/gasoline_motor.webp";
+  generatorImage = "assets/images/our_products/power_generator.webp";
+  pumpImage = "assets/images/our_products/power_triller.webp";
+  farmFieldImage = "assets/images/home/farm_field.webp";
   warehouseImage = "https://images.unsplash.com/photo-1560953981-28e3bab4aab6";
 
   categories = [
     {
       icon: this.icons.Settings,
-      title: "Diesel Engines",
-      description: "High-performance engines for agricultural and industrial applications",
+      title: "Gasoline Motors",
+      description: "Compact gasoline engines commonly used to power agricultural equipment such as brush cutters, water pumps, and small farming machines.",
       image: this.engineImage,
     },
     {
       icon: this.icons.Zap,
       title: "Power Generators",
-      description: "Reliable backup and continuous power generation solutions",
+      description: "Portable power generators designed to provide reliable electricity for agricultural tools, equipment, and rural work environments.",
       image: this.generatorImage,
     },
     {
-      icon: this.icons.Droplets,
-      title: "Irrigation Pumps",
-      description: "Advanced water pumping systems for efficient irrigation",
+      icon: this.icons.Tractor,
+      title: "Power Tillers",
+      description: "Compact two-wheel agricultural tillers used for soil preparation, cultivation, and small-scale farming operations.",
       image: this.pumpImage,
     },
   ];
 
   featuredProducts: Producto[] = [];
+
+  constructor() {
+
+    const categorias = [
+      "Water Pumps",
+      "Generators",
+      "Engines",
+      "Power Tillers"
+    ];
+
+    this.featuredProducts = categorias
+      .map(cat => PRODUCTOS.find(p => p.category === cat))
+      .filter((p): p is Producto => p !== undefined);
+
+  }
 
   benefits = [
     {

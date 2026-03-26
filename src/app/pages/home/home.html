@@ -173,9 +173,27 @@
 
         <div class="max-w-7xl mx-auto px-4">
 
-            <h2 class="text-4xl font-bold mb-12">
-                Featured Products
-            </h2>
+            <!-- Header -->
+
+            <div class="flex items-center justify-between mb-12 flex-wrap gap-4">
+
+                <h2 class="text-4xl font-bold">
+                    Featured Products
+                </h2>
+
+                <a routerLink="/products"
+                    class="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center">
+
+                    View All Products
+
+                    <lucide-icon [img]="ChevronRight" class="ml-2" [size]="18">
+                    </lucide-icon>
+
+                </a>
+
+            </div>
+
+            <!-- Products -->
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 

@@ -16,12 +16,13 @@ export class ProductsComponent {
 
   categories = [
     "All Products",
-    "Generadores",
-    "Motores",
-    "Bombas",
-    "Compresores",
-    "Construcción",
-    "Hidrolavadoras"
+    "Generators",
+    "Engines",
+    "Water Pumps",
+    "Air Compressors",
+    "Construction Equipment",
+    "Pressure Washers",
+    "Power Tillers"
   ];
 
   selectedCategory = "All Products";

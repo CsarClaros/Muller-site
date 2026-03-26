@@ -30,7 +30,7 @@ export class Navbar {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  setLanguage(lang: "EN" | "ES") {
-    this.language = lang;
-  }
+  // setLanguage(lang: "EN" | "ES") {
+  //   this.language = lang;
+  // }
 }
