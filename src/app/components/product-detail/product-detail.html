@@ -44,7 +44,7 @@
                     @for (img of product.gallery; track $index) {
                     @if ($index === selectedImage) {
 
-                    <img [src]="img" class="w-full h-[500px] object-cover fade-image" />
+                    <img [src]="img" class="w-full h-[500px] object-contain fade-image" />
 
                     }
                     }
@@ -59,7 +59,7 @@
                         class="border-2 rounded-lg overflow-hidden transition-all duration-300"
                         [class.border-red-600]="selectedImage === $index">
                         <img [src]="img"
-                            class="w-full h-24 object-cover hover:scale-110 transition-transform duration-300" />
+                            class="w-full h-full object-contain hover:scale-110 transition-transform duration-300" />
                     </button>
 
                     }
