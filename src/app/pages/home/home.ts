@@ -56,15 +56,10 @@ export class HomeComponent {
 
   constructor() {
 
-    const categorias = [
-      "Water Pumps",
-      "Generators",
-      "Engines",
-      "Power Tillers"
-    ];
+    const featuredIds = [ 6, 15, 23 ];
 
-    this.featuredProducts = categorias
-      .map(cat => PRODUCTOS.find(p => p.category === cat))
+    this.featuredProducts = featuredIds
+      .map(id => PRODUCTOS.find(p => p.id === id))
       .filter((p): p is Producto => p !== undefined);
 
   }
@@ -88,12 +83,12 @@ export class HomeComponent {
   ];
 
   partners = [
-    "Caterpillar",
-    "John Deere",
-    "Cummins",
-    "Perkins",
-    "Kubota",
-    "Yanmar"
+    "Kholer",
+    "Honda",
+    "Visont",
+    "Stihl",
+    "Deutz",
+    "Bosch"
   ];
   CheckCircle2 = CheckCircle2;
   ChevronRight = ChevronRight;

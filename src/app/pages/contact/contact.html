@@ -2,9 +2,10 @@
     <!-- Page Header -->
     <div class="bg-[#374151] text-white py-16 md:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact WMüller</h1>
             <p class="text-xl text-gray-300 max-w-2xl">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, id?
+                Get in touch with our team for industrial machinery, power solutions, and agroindustrial
+                equipment.
             </p>
         </div>
     </div>
@@ -12,15 +13,14 @@
     <!-- Contact Content -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-
             <!-- Contact Information -->
             <div class="lg:col-span-1 space-y-8">
                 <div>
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
                     <p class="text-gray-600 mb-8">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea ipsam debitis, iusto dolor quasi,
-                        quibusdam similique eos repellendus amet natus dolore eligendi velit pariatur, expedita ipsa
-                        maiores ullam! Veritatis, ratione..
+                        At WMüller, we are committed to supporting agroindustrial businesses with reliable
+                        machinery, industrial engines, generators, motor pumps, and technical expertise. Contact
+                        our team for product information, technical assistance, or business inquiries.
                     </p>
                 </div>
 
@@ -38,11 +38,7 @@
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-900 mb-1">Visit Us</h3>
-                            <p class="text-gray-600">
-                                1234 Industrial Avenue, Suite 100<br />
-                                Agricultural District, CA 90210<br />
-                                United States
-                            </p>
+                            <p class="text-gray-600">Stuttgart, Germany</p>
                         </div>
                     </div>
 
@@ -58,9 +54,8 @@
                         <div>
                             <h3 class="font-semibold text-gray-900 mb-1">Call Us</h3>
                             <p class="text-gray-600">
-                                Main: +1 (800) 123-4567<br />
-                                Sales: +1 (800) 123-4568<br />
-                                Support: +1 (800) 123-4569
+                                Phone / WhatsApp:<br />
+                                +49 000 000 000
                             </p>
                         </div>
                     </div>
@@ -76,11 +71,7 @@
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-900 mb-1">Email Us</h3>
-                            <p class="text-gray-600">
-                                General: info@agroindustry.com<br />
-                                Sales: sales@agroindustry.com<br />
-                                Support: support@agroindustry.com
-                            </p>
+                            <p class="text-gray-600">info@wmuller.com</p>
                         </div>
                     </div>
                 </div>
@@ -91,7 +82,7 @@
                 <div class="bg-gray-50 rounded-lg p-8 md:p-10">
                     <h2 class="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
                     <p class="text-gray-600 mb-8">
-                        Fill out the form below and our team will get back to you within 24 hours.
+                        Fill out the form below and our team will get back to you as soon as possible.
                     </p>
 
                     <form #contactForm="ngForm" (ngSubmit)="handleSubmit(contactForm)" class="space-y-6">
@@ -115,7 +106,7 @@
                                 <label for="phone" class="block font-semibold text-gray-900 mb-1">Phone Number</label>
                                 <input id="phone" name="phone" type="tel" [(ngModel)]="formData.phone"
                                     class="mt-1.5 bg-white w-full border rounded px-3 py-2"
-                                    placeholder="+1 (555) 000-0000" />
+                                    placeholder="+49 000 000 000" />
                             </div>
                             <div>
                                 <label for="company" class="block font-semibold text-gray-900 mb-1">Company Name</label>
@@ -139,17 +130,12 @@
                                 placeholder="Please provide details about your inquiry..."></textarea>
                         </div>
 
-                        <button type="submit" [disabled]="sending" class="w-full bg-[#DC2626] hover:bg-[#B91C1C] 
-               disabled:bg-gray-400
-               text-white font-bold py-3 rounded 
-               flex items-center justify-center gap-2
-               transition-all duration-300">
-
+                        <button type="submit" [disabled]="sending"
+                            class="w-full bg-[#DC2626] hover:bg-[#B91C1C] disabled:bg-gray-400 text-white font-bold py-3 rounded flex items-center justify-center gap-2 transition-all duration-300">
                             <!-- Ícono -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
-
                                 <path
                                     d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
                                 <path d="m21.854 2.147-10.94 10.939" />
@@ -157,45 +143,40 @@
 
                             <!-- Texto -->
                             <span>
-                                {{ sending ? 'Enviando...' : 'Send Message' }}
+                                {{ sending ? 'Sending...' : 'Send Message' }}
                             </span>
-
                         </button>
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-<!-- MODAL -->
-<div *ngIf="showModal || isClosing" (click)="closeModal()" class="fixed inset-0 flex items-center justify-center 
-         bg-black/40 backdrop-blur-sm z-50" [ngClass]="{
-    'animate-fadeIn pointer-events-auto': showModal && !isClosing,
-    'animate-fadeOut pointer-events-none': isClosing
-  }">
 
+<!-- MODAL -->
+<div *ngIf="showModal || isClosing" (click)="closeModal()"
+    class="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50" [ngClass]="{
+        'animate-fadeIn pointer-events-auto': showModal && !isClosing,
+        'animate-fadeOut pointer-events-none': isClosing,
+    }">
     <div class="bg-white rounded-xl p-6 max-w-md w-full text-center shadow-2xl" (click)="$event.stopPropagation()"
         [ngClass]="{
-         'animate-scaleIn': showModal && !isClosing,
-         'animate-scaleOut': isClosing
-       }">
-
+        'animate-scaleIn': showModal && !isClosing,
+        'animate-scaleOut': isClosing,
+        }">
         <!-- Ícono -->
         <div class="mb-4 flex justify-center">
-
             <!-- SUCCESS -->
-            <div *ngIf="modalType === 'success'" class="w-12 h-12 bg-green-100 text-green-600 
-                  flex items-center justify-center rounded-full text-2xl">
+            <div *ngIf="modalType === 'success'"
+                class="w-12 h-12 bg-green-100 text-green-600 flex items-center justify-center rounded-full text-2xl">
                 ✔
             </div>
 
             <!-- ERROR -->
-            <div *ngIf="modalType === 'error'" class="w-12 h-12 bg-red-100 text-red-600 
-                  flex items-center justify-center rounded-full text-2xl">
+            <div *ngIf="modalType === 'error'"
+                class="w-12 h-12 bg-red-100 text-red-600 flex items-center justify-center rounded-full text-2xl">
                 ✖
             </div>
-
         </div>
 
         <!-- Mensaje -->
@@ -204,11 +185,9 @@
         </p>
 
         <!-- Botón -->
-        <button (click)="closeModal()" class="bg-[#DC2626] hover:bg-[#B91C1C] 
-                   text-white px-6 py-2 rounded 
-                   transition-all duration-300">
-            Cerrar
+        <button (click)="closeModal()"
+            class="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-6 py-2 rounded transition-all duration-300">
+            Close
         </button>
-
     </div>
 </div>

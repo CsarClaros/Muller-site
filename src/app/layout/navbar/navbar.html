@@ -7,16 +7,24 @@
             <!-- Logo -->
             <a routerLink="/" class="flex items-center space-x-3">
 
-                <div class="w-12 h-12 bg-[#DC2626] rounded-lg flex items-center justify-center">
-                    <div class="text-white text-xl font-bold">Muller</div>
+                <!-- <div class="w-12 h-12 bg-[#DC2626] rounded-lg flex items-center justify-center">
+                    <div class="text-white text-xl font-bold">WM</div>
+                </div> -->
+
+                <div class="w-auto h-12 rounded-lg overflow-hidden flex items-center justify-center">
+                    <img 
+                        src="assets/icons/Logo_Muller.webp" 
+                        alt="WMüller Logo"
+                        class="w-full h-full object-contain"
+                    />
                 </div>
 
                 <div class="hidden sm:block">
-                    <div class="text-xl font-bold text-gray-900">AgroIndustry</div>
+                    <!-- <div class="text-xl font-bold text-gray-900">WMüller</div> -->
 
-                    <div class="text-xs text-gray-500">
+                    <!-- <div class="text-xs text-gray-500">
                         {{ language === 'EN' ? 'Industrial Solutions' : 'Soluciones Industriales' }}
-                    </div>
+                    </div> -->
                 </div>
 
             </a>
@@ -56,7 +64,7 @@
                 <!-- CTA -->
                 <a routerLink="/contact"
                     class="hidden md:inline-flex bg-[#DC2626] hover:bg-[#B91C1C] text-white px-4 py-2 rounded-md text-sm font-medium">
-                    {{ language === 'EN' ? 'Get Quote' : 'Cotizar' }}
+                    {{ language === 'EN' ? 'Request Quote' : 'Solicitar Cotización' }}
                 </a>
 
 
@@ -77,7 +85,8 @@
         <nav class="px-4 py-4 space-y-3">
 
             <a *ngFor="let link of navLinks" [routerLink]="link.path" (click)="isMobileMenuOpen = false"
-                class="block px-4 py-2 rounded-lg text-sm font-medium" [ngClass]="isActive(link.path) ? 'bg-[#DC2626] text-white': 'text-gray-700 hover:bg-gray-100'">
+                class="block px-4 py-2 rounded-lg text-sm font-medium"
+                [ngClass]="isActive(link.path) ? 'bg-[#DC2626] text-white': 'text-gray-700 hover:bg-gray-100'">
                 {{ language === 'EN' ? link.labelEN : link.labelES }}
             </a>
 
