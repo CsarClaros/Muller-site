@@ -564,7 +564,7 @@ export const PRODUCTOS: Producto[] = [
     gallery: [
       'assets/images/products/pumps/mwp200/1.webp',
       'assets/images/products/pumps/mwp200/2.webp',
-      // 'assets/images/products/pumps/mwp200/3.webp',
+      'assets/images/products/pumps/mwp200/3.webp',
     ],
 
     features: [
