@@ -15,10 +15,10 @@ export class ProductDetail {
   selectedImage = 0;
   product: Producto | undefined;
 
-  heroImage = 'https://images.unsplash.com/photo-1690100693182-e6d7fe91bc38';
-  engineImage = 'https://images.unsplash.com/photo-1766842996145-464b9bed0493';
-  generatorImage = 'https://images.unsplash.com/photo-1705051278299-7e64ba21437a';
-  pumpImage = 'https://images.unsplash.com/photo-1772588047051-c35d272b5d9c';
+  // heroImage = 'https://images.unsplash.com/photo-1690100693182-e6d7fe91bc38';
+  // engineImage = 'https://images.unsplash.com/photo-1766842996145-464b9bed0493';
+  // generatorImage = 'https://images.unsplash.com/photo-1705051278299-7e64ba21437a';
+  // pumpImage = 'https://images.unsplash.com/photo-1772588047051-c35d272b5d9c';
 
 
   relatedProducts: Producto[] = [];

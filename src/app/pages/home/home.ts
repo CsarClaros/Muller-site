@@ -22,6 +22,8 @@ export class HomeComponent {
     Tractor
   };
 
+  // c:proyecto/imagnes/home/hero.webp
+
   heroImage = "assets/images/home/hero.webp";
   engineImage = "assets/images/our_products/gasoline_motor.webp";
   generatorImage = "assets/images/our_products/power_generator.webp";

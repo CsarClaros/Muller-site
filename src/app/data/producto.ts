@@ -1,3 +1,4 @@
+
 export interface Producto {
   id: number;
   name: string;
@@ -6,8 +7,8 @@ export interface Producto {
 
   description: string;
 
-  image: string; // main image for cards
-  gallery: string[]; // images for detail gallery
+  image: string;
+  gallery: string[];
 
   features: string[];
 
@@ -18,397 +19,862 @@ export interface Producto {
 
 export const PRODUCTOS: Producto[] = [
   // =========================
-  // GENERATORS
+  // ENGINES
   // =========================
 
   {
     id: 1,
-    name: 'Silent Inverter Generator',
-    category: 'Generators',
-    model: 'INV-2000',
+    name: 'Müller Gasoline Engine 15 HP',
+    category: 'Engines',
+    model: 'Müller MX-150G',
 
     description:
-      'Portable inverter generator designed to deliver stable and reliable power for sensitive electronic equipment.',
+      'Heavy-duty gasoline engine designed to provide reliable power and maximum durability for agricultural, industrial, and construction applications.',
 
-    image: 'assets/images/products/generators/inv2000/main.webp',
+    image: 'assets/images/products/engines/mx150g/main.webp',
 
     gallery: [
-      'assets/images/products/generators/inv2000/1.webp',
-      'assets/images/products/generators/inv2000/2.webp',
-      'assets/images/products/generators/inv2000/3.webp',
+      'assets/images/products/engines/mx150g/1.webp',
+      // 'assets/images/products/engines/mx150g/2.webp',
+      // 'assets/images/products/engines/mx150g/3.webp',
     ],
 
     features: [
-      'Low noise operation',
-      'Overload protection',
-      'Low oil shutdown protection',
-      'Stable power output',
-      'High energy efficiency',
+      'Single-cylinder OHV engine',
+      'High durability construction',
+      'Optimized fuel consumption',
+      'Reliable continuous operation',
+      'Suitable for agricultural machinery',
     ],
 
     specs: {
-      type: 'Inverter',
-      voltage: '110 / 220 V',
-      frequency: '50 / 60 Hz',
-      fuel: 'Gasoline',
-      start: 'Manual',
+      engine_type: 'Single-cylinder, 4-stroke, air-cooled OHV',
+      fuel_type: 'Gasoline',
+      maximum_power: '15 HP',
+      displacement: '420 cc',
+      starting_system: 'Manual recoil / Electric start',
+      fuel_tank_capacity: '6.5 L',
+      oil_capacity: '1.1 L',
+      oil_alert_system: 'Yes',
+      output_shaft_type: 'Standard keyed shaft',
     },
   },
 
   {
     id: 2,
-    name: 'Open Frame Generator',
-    category: 'Generators',
-    model: 'OF-3500',
+    name: 'Müller Diesel Engine 15 HP',
+    category: 'Engines',
+    model: 'Müller MDX-1100E',
 
     description:
-      'Heavy-duty open frame generator designed for construction sites and demanding environments.',
+      'Industrial diesel engine with direct injection technology and electric start system designed for demanding agricultural and industrial applications.',
 
-    image: 'assets/images/products/generators/of3500/main.webp',
+    image: 'assets/images/products/engines/mdx1100e/main.webp',
 
     gallery: [
-      'assets/images/products/generators/of3500/1.webp',
-      'assets/images/products/generators/of3500/2.webp',
-      'assets/images/products/generators/of3500/3.webp',
+      'assets/images/products/engines/mdx1100e/1.webp',
+      // 'assets/images/products/engines/mdx1100e/2.webp',
+      // 'assets/images/products/engines/mdx1100e/3.webp',
     ],
 
     features: [
-      'High power output',
-      'Reinforced frame structure',
-      'Continuous operation capability',
-      'Easy maintenance',
+      'Integrated electric start system',
+      'Direct fuel injection technology',
+      'High torque output',
+      'Low fuel consumption',
+      'Reinforced air filter system',
     ],
 
     specs: {
-      type: 'Open Frame',
-      voltage: '220 V',
-      frequency: '60 Hz',
-      fuel: 'Gasoline',
+      engine_type: 'Single-cylinder, 4-stroke, direct injection, air-cooled',
+      fuel_type: 'Diesel',
+      maximum_power: '15 HP - 16 HP',
+      starting_system: '12V electric start with backup manual decompressor',
+      injection_system: 'Direct injection',
+      air_filter_system: 'Heavy-duty dust protection filter',
+      output_shaft_type: 'Heavy-duty horizontal keyed shaft',
+      recommended_applications:
+        'Industrial irrigation systems, generators, agricultural machinery',
     },
   },
 
-  // {
-  //     id: 3,
-  //     name: 'Diesel Power Generator',
-  //     category: 'Generators',
-  //     model: 'DG-5000',
-
-  //     description:
-  //         'Industrial diesel generator designed for reliable power supply in continuous operations.',
-
-  //     image: 'assets/images/products/generators/dg5000/main.webp',
-
-  //     gallery: [
-  //         'assets/images/products/generators/dg5000/1.webp',
-  //         'assets/images/products/generators/dg5000/2.webp',
-  //         'assets/images/products/generators/dg5000/3.webp',
-  //     ],
-
-  //     features: [
-  //         'High performance',
-  //         'Low fuel consumption',
-  //         'Digital control panel',
-  //         'Stable power output',
-  //     ],
-
-  //     specs: {
-  //         type: 'Diesel',
-  //         power_output: '5000 W',
-  //         fuel: 'Diesel',
-  //         cooling: 'Air cooled',
-  //     },
-  // },
-
-  // =========================
-  // PRESSURE WASHERS
-  // =========================
-
   {
-    id: 4,
-    name: 'Gasoline Pressure Washer',
-    category: 'Pressure Washers',
-    model: 'HPW-3000',
+    id: 3,
+    name: 'Müller Diesel Engine 10 HP',
+    category: 'Engines',
+    model: 'Müller MDX-186D',
 
-    description: 'High-pressure washer designed for professional cleaning applications.',
+    description:
+      'High-efficiency diesel engine engineered for continuous operation, heavy torque delivery, and low fuel consumption in agricultural environments.',
 
-    image: 'assets/images/products/washers/hpw3000/main.webp',
+    image: 'assets/images/products/engines/mdx186d/main.webp',
 
     gallery: [
-      'assets/images/products/washers/hpw3000/1.webp',
-      'assets/images/products/washers/hpw3000/2.webp',
-      'assets/images/products/washers/hpw3000/3.webp',
+      'assets/images/products/engines/mdx186d/1.webp',
+      // 'assets/images/products/engines/mdx186d/2.webp',
+      // 'assets/images/products/engines/mdx186d/3.webp',
     ],
 
     features: [
-      'High pressure performance',
-      'Professional grade cleaning',
-      'Heavy-duty frame structure',
-      'Integrated foam tank',
+      'Direct injection diesel system',
+      'Oil-bath air filtration',
+      'Designed for continuous work',
+      'High torque performance',
+      'Optimized fuel economy',
     ],
 
     specs: {
-      type: 'Gasoline',
-      pressure_level: 'High',
-      usage: 'Professional',
+      engine_type: 'Single-cylinder, 4-stroke, direct injection, air-cooled',
+      fuel_type: 'Diesel',
+      maximum_power: '10 HP',
+      displacement: '418 cc',
+      starting_system: 'Manual recoil with decompressor / Electric start',
+      air_filter_type: 'Oil-bath filter',
+      fuel_tank_capacity: '5.5 L',
+      oil_capacity: '1.65 L',
+      output_shaft_type: 'Standard keyed shaft',
+    },
+  },
+
+  {
+    id: 4,
+    name: 'Müller V-Twin Diesel Engine',
+    category: 'Industrial Engines',
+    model: 'Müller MVX-220D',
+
+    description:
+      'Industrial V-Twin diesel engine engineered for maximum power delivery, continuous operation, and superior reliability in heavy-duty applications.',
+
+    image: 'assets/images/products/engines/mvx220d/main.webp',
+
+    gallery: [
+      'assets/images/products/engines/mvx220d/1.webp',
+      // 'assets/images/products/engines/mvx220d/2.webp',
+      // 'assets/images/products/engines/mvx220d/3.webp',
+    ],
+
+    features: [
+      'V-Twin engine configuration',
+      'Air-cooled industrial system',
+      'Reduced vibration design',
+      'Integrated electric starter',
+      'High-capacity industrial performance',
+    ],
+
+    specs: {
+      engine_type: 'V-Twin, 4-stroke, direct injection',
+      cooling_system: 'Forced air cooling',
+      fuel_type: 'Diesel',
+      power_range: '20 HP - 22 HP',
+      starting_system: '12V electric start',
+      injection_system: 'Direct injection',
+      output_shaft_type: 'Heavy-duty conical or keyed shaft',
+      recommended_applications:
+        'Large generators, industrial pumps, heavy-duty machinery',
     },
   },
 
   {
     id: 5,
-    name: 'Electric Pressure Washer',
-    category: 'Pressure Washers',
-    model: 'EPW-2000',
+    name: 'Müller Water-Cooled Diesel Engine',
+    category: 'Industrial Engines',
+    model: 'Müller MWD-200',
 
-    description: 'Compact electric pressure washer suitable for residential cleaning tasks.',
+    description:
+      'Water-cooled diesel engine designed for continuous heavy-duty operation with stable thermal performance and optimized fuel efficiency.',
 
-    image: 'assets/images/products/washers/epw2000/main.webp',
+    image: 'assets/images/products/engines/mwd200/main.webp',
 
     gallery: [
-      'assets/images/products/washers/epw2000/1.webp',
-      'assets/images/products/washers/epw2000/2.webp',
-      'assets/images/products/washers/epw2000/3.webp',
+      'assets/images/products/engines/mwd200/1.webp',
+      // 'assets/images/products/engines/mwd200/2.webp',
+      // 'assets/images/products/engines/mwd200/3.webp',
     ],
 
     features: [
-      'Compact design',
-      'Easy transportation',
-      'Low power consumption',
-      'Ideal for residential use',
+      'Water cooling system',
+      'Stable thermal operation',
+      'Designed for continuous workloads',
+      'Industrial-grade durability',
+      'Low fuel consumption',
     ],
 
     specs: {
-      type: 'Electric',
-      voltage: '220 V',
+      engine_type: 'Single-cylinder / Twin-cylinder, 4-stroke, direct injection',
+      cooling_system: 'Water cooling',
+      fuel_type: 'Diesel',
+      power_range: '12 HP - 20 HP',
+      starting_system: '12V electric start / Manual decompressor',
+      injection_system: 'Direct injection',
+      output_shaft_type: 'Heavy-duty horizontal shaft',
+      main_advantage:
+        'Supports long continuous operation under maximum load conditions',
     },
   },
-
-  // =========================
-  // ENGINES
-  // =========================
 
   {
     id: 6,
-    name: 'Gasoline Engine 170F',
+    name: 'Müller Gasoline Engine 6.5 HP',
     category: 'Engines',
-    model: '170F',
+    model: 'Müller MX-65G',
 
     description:
-      'Four-stroke gasoline engine with air cooling system designed for agricultural and industrial machinery.',
+      'Compact gasoline engine designed for agricultural, industrial, and construction equipment requiring reliable and efficient power delivery.',
 
-    image: 'assets/images/products/engines/170f/main.webp',
+    image: 'assets/images/products/engines/mx65g/main.webp',
 
     gallery: [
-      'assets/images/products/engines/170f/1.webp',
-      'assets/images/products/engines/170f/2.webp',
-      'assets/images/products/engines/170f/3.webp',
+      'assets/images/products/engines/mx65g/1.webp',
+      'assets/images/products/engines/mx65g/2.webp',
+      'assets/images/products/engines/mx65g/3.webp',
     ],
 
-    features: ['Single cylinder engine', 'High efficiency performance', 'Low fuel consumption'],
+    features: [
+      'Horizontal shaft design',
+      'OHV engine technology',
+      'Smooth recoil starting',
+      'Fuel efficient performance',
+      'Easy maintenance system',
+    ],
 
     specs: {
-      displacement: '196 cc',
-      power_output: '4.7 kW',
-      rpm: '3600',
+      brand: 'Müller',
+      maximum_power: '6.5 HP',
+      engine_type: 'Single-cylinder, 4-stroke, OHV, air-cooled',
+      shaft_type: 'Horizontal shaft',
+      starting_system: 'Manual recoil starter',
+      oil_capacity: '600 ml',
+      recommended_oil_grades: '15W-40, 10W-40, 15W-30, 10W-30',
+      air_filter_system: 'Sealed cartridge filter system',
     },
   },
-
-  // {
-  //     id: 7,
-  //     name: 'Industrial Diesel Engine',
-  //     category: 'Engines',
-  //     model: 'D180',
-
-  //     description:
-  //         'High-performance diesel engine designed for industrial equipment and heavy machinery.',
-
-  //     image: 'assets/images/products/engines/d180/main.webp',
-
-  //     gallery: [
-  //         'assets/images/products/engines/d180/1.webp',
-  //         'assets/images/products/engines/d180/2.webp',
-  //         'assets/images/products/engines/d180/3.webp',
-  //     ],
-
-  //     features: ['High durability', 'Fuel efficient design', 'Industrial grade reliability'],
-
-  //     specs: {
-  //         type: 'Diesel',
-  //         cooling: 'Air cooled',
-  //     },
-  // },
 
   // =========================
   // WATER PUMPS
   // =========================
 
-  {
-    id: 8,
-    name: 'High Flow Water Pump',
-    category: 'Water Pumps',
-    model: 'WP-80',
-
-    description:
-      'High-capacity water pump designed for irrigation and water transfer in agricultural environments.',
-
-    image: 'assets/images/products/pumps/wp80/main.webp',
-
-    gallery: [
-      'assets/images/products/pumps/wp80/1.webp',
-      'assets/images/products/pumps/wp80/2.webp',
-      'assets/images/products/pumps/wp80/3.webp',
-    ],
-
-    features: ['High flow capacity', 'Aluminum pump housing', 'Continuous operation capability'],
-
-    specs: {
-      diameter: '3 inch',
-      flow_rate: 'High',
-    },
-  },
-
-  // =========================
-  // AIR COMPRESSORS
-  // =========================
-
   // {
-  //     id: 9,
-  //     name: 'Air Compressor 50L',
-  //     category: 'Air Compressors',
-  //     model: 'AC-50L',
-
-  //     description:
-  //         'High-efficiency lubricated air compressor suitable for workshops and industrial applications.',
-
-  //     image: 'assets/images/products/compressors/ac50l/main.webp',
-
-  //     gallery: [
-  //         'assets/images/products/compressors/ac50l/1.webp',
-  //         'assets/images/products/compressors/ac50l/2.webp',
-  //         'assets/images/products/compressors/ac50l/3.webp',
-  //     ],
-
-  //     features: ['Low noise operation', 'High efficiency motor', 'Professional grade construction'],
-
-  //     specs: {
-  //         tank_capacity: '50 L',
-  //         lubrication: 'Oil lubricated',
-  //     },
-  // },
-
-  // =========================
-  // CONSTRUCTION EQUIPMENT
-  // =========================
-
-  // {
-  //   id: 10,
-  //   name: 'Concrete Cutting Machine',
-  //   category: 'Construction Equipment',
-  //   model: 'CC-500',
+  //   id: 7,
+  //   name: 'Müller Gasoline Water Pump 2 Inch',
+  //   category: 'Water Pumps',
+  //   model: 'Müller WP-20G',
 
   //   description:
-  //     'Heavy-duty concrete cutting machine designed for construction sites and professional contractors.',
+  //     'Compact gasoline water pump designed for efficient clean water transfer in agricultural and construction environments.',
 
-  //   image: 'assets/images/products/construction/cc500/main.webp',
+  //   image: 'assets/images/products/pumps/wp20g/main.webp',
 
   //   gallery: [
-  //     'assets/images/products/construction/cc500/1.webp',
-  //     'assets/images/products/construction/cc500/2.webp',
-  //     'assets/images/products/construction/cc500/3.webp',
+  //     'assets/images/products/pumps/wp20g/1.webp',
+  //     'assets/images/products/pumps/wp20g/2.webp',
+  //     'assets/images/products/pumps/wp20g/3.webp',
   //   ],
 
   //   features: [
-  //     'High precision cutting',
-  //     'Reinforced metal frame',
-  //     'Designed for heavy-duty construction work',
+  //     'Self-priming centrifugal pump',
+  //     'Portable tubular steel frame',
+  //     'Reliable OHV gasoline engine',
+  //     'High water transfer efficiency',
+  //     'Suitable for irrigation systems',
   //   ],
 
   //   specs: {
-  //     usage: 'Professional',
+  //     pump_type: 'Self-priming centrifugal pump',
+  //     suction_discharge_size: '2 inch x 2 inch (50 mm)',
+  //     engine_type: 'Single-cylinder, 4-stroke, air-cooled OHV',
+  //     engine_power: '7 HP',
+  //     fuel_type: 'Gasoline',
+  //     starting_system: 'Manual recoil start',
+  //     structure_type: 'Tubular steel frame',
+  //     recommended_applications:
+  //       'Irrigation systems, tank filling, water transfer',
   //   },
   // },
 
+  {
+    id: 8,
+    name: 'Müller High Pressure Water Pump',
+    category: 'Water Pumps',
+    model: 'Müller HP-20X',
 
-   // =========================
-  // AGRICULTURAL EQUIPMENT
-  // =========================
+    description:
+      'High-pressure gasoline water pump engineered for irrigation systems, elevated tank filling, and demanding hydraulic applications.',
 
+    image: 'assets/images/products/pumps/hp20x/main.webp',
+
+    gallery: [
+      'assets/images/products/pumps/hp20x/1.webp',
+      // 'assets/images/products/pumps/hp20x/2.webp',
+      // 'assets/images/products/pumps/hp20x/3.webp',
+    ],
+
+    features: [
+      'High-pressure centrifugal design',
+      'Reinforced aluminum pump body',
+      'Portable protective steel cage',
+      'Optimized for elevated pumping',
+      'Professional irrigation performance',
+    ],
+
+    specs: {
+      pump_type: 'High-pressure centrifugal pump',
+      suction_discharge_size: '2 inch x 2 inch (50 mm)',
+      engine_type: 'Single-cylinder, 4-stroke, air-cooled OHV',
+      engine_power: '7 HP - 7.5 HP',
+      fuel_type: 'Gasoline',
+      pump_body_material: 'Reinforced cast iron / aluminum',
+      starting_system: 'Manual recoil start',
+      structure_type: 'Tubular steel protective cage',
+    },
+  },
+
+  {
+    id: 9,
+    name: 'Müller Chemical Water Pump',
+    category: 'Specialized Pumps',
+    model: 'Müller CP-20E',
+
+    description:
+      'Corrosion-resistant gasoline water pump specifically designed for chemical liquids, fertilizers, and treated wastewater applications.',
+
+    image: 'assets/images/products/pumps/cp20e/main.webp',
+
+    gallery: [
+      'assets/images/products/pumps/cp20e/1.webp',
+      // 'assets/images/products/pumps/cp20e/2.webp',
+      // 'assets/images/products/pumps/cp20e/3.webp',
+    ],
+
+    features: [
+      'Corrosion-resistant pump body',
+      'High-density reinforced polymer construction',
+      'Chemical-resistant mechanical seals',
+      'Designed for agricultural chemicals',
+      'Heavy-duty steel frame',
+    ],
+
+    specs: {
+      pump_type: 'Chemical centrifugal pump',
+      body_material: 'Reinforced thermoplastic',
+      suction_discharge_size: '2 inch x 2 inch (50 mm)',
+      engine_type: 'Single-cylinder, 4-stroke, air-cooled OHV',
+      engine_power: '7 HP',
+      fuel_type: 'Gasoline',
+      seal_type: 'Chemical-resistant mechanical seals',
+      starting_system: 'Manual recoil start',
+    },
+  },
+
+  {
+    id: 10,
+    name: 'Müller Clean Water Pump',
+    category: 'Water Pumps',
+    model: 'Müller CW-20C',
+
+    description:
+      'High-efficiency gasoline water pump featuring quick-access maintenance design for intensive agricultural and industrial use.',
+
+    image: 'assets/images/products/pumps/cw20c/main.webp',
+
+    gallery: [
+      'assets/images/products/pumps/cw20c/1.webp',
+      // 'assets/images/products/pumps/cw20c/2.webp',
+      // 'assets/images/products/pumps/cw20c/3.webp',
+    ],
+
+    features: [
+      'Quick-access pump housing',
+      'Reinforced steel frame',
+      'Easy impeller cleaning',
+      'Continuous operation capability',
+      'High durability design',
+    ],
+
+    specs: {
+      pump_type: 'Self-priming centrifugal pump',
+      suction_discharge_size: '2 inch x 2 inch (50 mm)',
+      engine_type: 'Single-cylinder, 4-stroke, air-cooled OHV',
+      engine_power: '7 HP',
+      fuel_type: 'Gasoline',
+      body_design: 'Reinforced housing with quick-access bolts',
+      starting_system: 'Heavy-duty manual recoil starter',
+      structure_type: 'Tubular steel frame with vibration dampers',
+    },
+  },
 
   {
     id: 11,
-    name: 'Gasoline Power Tiller',
-    category: 'Power Tillers',
-    model: 'PW950FG',
+    name: 'Müller Trash Water Pump 3 Inch',
+    category: 'Specialized Pumps',
+    model: 'Müller TP-30T',
 
     description:
-      'Compact gasoline power tiller designed for efficient soil cultivation in small and medium agricultural fields. It offers reliable performance, simple operation, and durable construction for long-term farming applications.',
+      'Industrial trash water pump engineered for muddy water, sludge, and debris-filled environments.',
 
-    image: 'assets/images/products/tillers/pw950fg/main.webp',
+    image: 'assets/images/products/pumps/tp30t/main.webp',
 
     gallery: [
-      'assets/images/products/tillers/pw950fg/1.webp',
-      'assets/images/products/tillers/pw950fg/2.webp',
-      'assets/images/products/tillers/pw950fg/3.webp',
+      'assets/images/products/pumps/tp30t/1.webp',
+      // 'assets/images/products/pumps/tp30t/2.webp',
+      // 'assets/images/products/pumps/tp30t/3.webp',
     ],
 
     features: [
-      'Reliable 170F gasoline engine',
-      'Chain transmission system',
-      'Belt tension clutch for smooth operation',
-      'Compact design for easy maneuverability',
-      'Ideal for agricultural soil preparation',
+      'Handles muddy water and solids',
+      'Quick-release cleaning access',
+      'Heavy-duty cast iron impeller',
+      'Industrial-grade durability',
+      'High-capacity pumping performance',
     ],
 
     specs: {
-      engine_type: '170F gasoline engine',
-      rated_power: '4 kW',
-      rated_rpm: '3600 RPM',
-      transmission_type: 'Chain transmission',
-      clutch_type: 'Belt tension clutch',
-      gears: '-1 / 0 / 1 / 2',
-      output_shaft: '23 mm',
-      tillage_width: '950 mm',
-      tillage_depth: '≥ 100 mm',
-      working_speed: '0.1 – 0.3 m/s',
-      net_weight: '53 kg',
-      dimension: '840 × 460 × 660 mm',
+      pump_type: 'Trash centrifugal pump',
+      suction_discharge_size: '3 inch x 3 inch (75 mm)',
+      engine_type: 'Single-cylinder, 4-stroke, air-cooled OHV',
+      engine_power: '7 HP - 7.5 HP',
+      fuel_type: 'Gasoline',
+      solids_handling: 'Supports suspended solid particles',
+      access_design: 'Quick-release front cover',
+      structure_type: 'Heavy-duty tubular steel frame',
     },
   },
+
   {
     id: 12,
-    name: 'Gasoline Power Tiller',
-    category: 'Power Tillers',
-    model: 'PW1000FG',
+    name: 'Müller Diesel Water Pump 2 Inch',
+    category: 'Diesel Water Pumps',
+    model: 'Müller DWP-20',
 
     description:
-      'Heavy-duty gasoline power tiller designed for efficient cultivation in agricultural environments. Built with a robust gear transmission system and powerful engine, it delivers reliable soil preparation and improved field productivity.',
+      'Diesel-powered water pump designed for continuous agricultural irrigation and long-distance water transfer applications.',
 
-    image: 'assets/images/products/tillers/pw1000fg/main.webp',
+    image: 'assets/images/products/pumps/dwp20/main.webp',
 
     gallery: [
-      'assets/images/products/tillers/pw1000fg/1.webp',
+      'assets/images/products/pumps/dwp20/1.webp',
+      // 'assets/images/products/pumps/dwp20/2.webp',
+      // 'assets/images/products/pumps/dwp20/3.webp',
     ],
 
     features: [
-      'Powerful 170F gasoline engine',
-      'Gear transmission system for durability',
-      'Wet friction clutch for smooth control',
-      'Wide tillage width for efficient cultivation',
-      'Designed for professional agricultural work',
+      'Direct injection diesel engine',
+      'Fuel-efficient continuous operation',
+      'Heavy-duty steel cage frame',
+      'High torque performance',
+      'Industrial vibration dampers',
     ],
 
     specs: {
-      engine_type: '170F gasoline engine',
-      rated_power: '4 kW',
-      rated_rpm: '3600 RPM',
-      transmission_type: 'Gear transmission',
-      clutch_type: 'Wet friction disc clutch',
-      gears: '-1 / 0 / 1 / 2',
-      output_shaft: '23 mm',
-      tillage_width: '1000 mm',
-      tillage_depth: '≥ 100 mm',
-      working_speed: '0.1 – 0.3 m/s',
-      net_weight: '79 kg',
-      dimension: '840 × 460 × 660 mm',
+      pump_type: 'Self-priming centrifugal pump',
+      suction_discharge_size: '2 inch x 2 inch (50 mm)',
+      engine_type: 'Single-cylinder, 4-stroke, direct injection, air-cooled',
+      fuel_type: 'Diesel',
+      engine_power: '6 HP - 7 HP',
+      starting_system: 'Manual recoil with decompressor',
+      structure_type: 'Heavy-duty tubular steel cage',
+      economic_advantage: 'Optimized fuel consumption for continuous work',
+    },
+  },
+
+  {
+    id: 13,
+    name: 'Müller High Flow Diesel Pump 4 Inch',
+    category: 'Diesel Water Pumps',
+    model: 'Müller DWP-40X',
+
+    description:
+      'High-capacity diesel water pump designed for large-scale irrigation, construction drainage, and emergency flood control.',
+
+    image: 'assets/images/products/pumps/dwp40x/main.webp',
+
+    gallery: [
+      'assets/images/products/pumps/dwp40x/1.webp',
+      // 'assets/images/products/pumps/dwp40x/2.webp',
+      // 'assets/images/products/pumps/dwp40x/3.webp',  
+    ],
+
+    features: [
+      'Large-volume water transfer',
+      'Direct injection diesel engine',
+      'Heavy-duty industrial frame',
+      'Continuous operation capability',
+      'High energy efficiency',
+    ],
+
+    specs: {
+      pump_type: 'High-flow centrifugal pump',
+      suction_discharge_size: '4 inch x 4 inch (100 mm)',
+      engine_type: 'Single-cylinder, 4-stroke, direct injection, air-cooled',
+      fuel_type: 'Diesel',
+      engine_power: '9 HP - 10 HP',
+      starting_system: 'Manual recoil with decompressor',
+      structure_type: 'Reinforced tubular steel cage',
+      main_focus: 'Maximum flow volume with fuel efficiency',
+    },
+  },
+
+  {
+    id: 14,
+    name: 'Müller High Pressure Diesel Pump',
+    category: 'Diesel Water Pumps',
+    model: 'Müller DHP-20E',
+
+    description:
+      'High-pressure diesel water pump designed for elevated irrigation systems and long-distance water transfer.',
+
+    image: 'assets/images/products/pumps/dhp20e/main.webp',
+
+    gallery: [
+      'assets/images/products/pumps/dhp20e/1.webp',
+      // 'assets/images/products/pumps/dhp20e/2.webp',
+      // 'assets/images/products/pumps/dhp20e/3.webp',
+    ],
+
+    features: [
+      'High-pressure pumping system',
+      'Direct injection diesel engine',
+      'Reinforced red pump housing',
+      'Optional electric start system',
+      'Industrial anti-vibration frame',
+    ],
+
+    specs: {
+      pump_type: 'High-pressure centrifugal pump',
+      suction_discharge_size: '2 inch x 2 inch (50 mm)',
+      engine_type: 'Single-cylinder, 4-stroke, direct injection, air-cooled',
+      fuel_type: 'Diesel',
+      engine_power: '6 HP - 7 HP',
+      pump_body_material: 'Reinforced cast iron / aluminum',
+      starting_system: 'Manual recoil / Optional electric start',
+      structure_type: 'Heavy-duty steel cage frame',
+    },
+  },
+
+  {
+    id: 15,
+    name: 'Müller Clean Water Pump 2 Inch',
+    category: 'Water Pumps',
+    model: 'Müller MWP-200',
+
+    description:
+      'Professional clean water pump designed for agricultural irrigation, tank filling, and rapid water transfer.',
+
+    image: 'assets/images/products/pumps/mwp200/main.webp',
+
+    gallery: [
+      'assets/images/products/pumps/mwp200/1.webp',
+      'assets/images/products/pumps/mwp200/2.webp',
+      // 'assets/images/products/pumps/mwp200/3.webp',
+    ],
+
+    features: [
+      'High-performance clean water pumping',
+      'OHV gasoline engine',
+      'Automatic oil protection sensor',
+      'Anti-corrosion tubular steel frame',
+      'Designed for field operation',
+    ],
+
+    specs: {
+      equipment_type: 'Horizontal shaft clean water pump',
+      inlet_outlet_size: '2 inch (50 mm)',
+      engine_type: 'Müller 6.5 HP, single-cylinder, 4-stroke OHV',
+      fuel_type: 'Gasoline',
+      fuel_tank_capacity: '3.6 L',
+      protection_system: 'Automatic low oil sensor',
+      support_frame: 'Tubular anti-corrosion steel cage',
+    },
+  },
+
+  // =========================
+  // POWER TILLERS
+  // =========================
+
+  {
+    id: 16,
+    name: 'Müller Compact Power Tiller',
+    category: 'Power Tillers',
+    model: 'Müller MT-450F',
+
+    description:
+      'Compact gasoline power tiller designed for soil preparation in gardens, greenhouses, and small agricultural fields.',
+
+    image: 'assets/images/products/tillers/mt450f/main.webp',
+
+    gallery: [
+      'assets/images/products/tillers/mt450f/1.webp',
+      // 'assets/images/products/tillers/mt450f/2.webp',
+      // 'assets/images/products/tillers/mt450f/3.webp',
+    ],
+
+    features: [
+      'Adjustable ergonomic handlebar',
+      'Integrated rear support wheels',
+      'Heavy-duty rotary blade system',
+      'Excellent maneuverability',
+      'Ideal for soil aeration and cultivation',
+    ],
+
+    specs: {
+      equipment_type: 'Horizontal shaft power tiller',
+      engine_type: 'Single-cylinder, 4-stroke, air-cooled OHV',
+      fuel_type: 'Gasoline',
+      blade_configuration: '3-4 heavy-duty blade groups',
+      support_system: 'Integrated rear wheels',
+      transmission_system: 'Reinforced clutch transmission',
+      handlebar_type: 'Adjustable ergonomic handlebar',
+    },
+  },
+
+  {
+    id: 17,
+    name: 'Müller Agricultural Power Tiller',
+    category: 'Power Tillers',
+    model: 'Müller MT-80PRO',
+
+    description:
+      'Professional gasoline power tiller with optimized tilling width for agricultural fields and greenhouse cultivation.',
+
+    image: 'assets/images/products/tillers/mt80pro/main.webp',
+
+    gallery: [
+      'assets/images/products/tillers/mt80pro/1.webp',
+      // 'assets/images/products/tillers/mt80pro/2.webp',
+      // 'assets/images/products/tillers/mt80pro/3.webp',
+    ],
+
+    features: [
+      '80 cm tilling width',
+      'High torque blade system',
+      'Integrated transport wheel',
+      'Reinforced transmission system',
+      'Suitable for hard soil conditions',
+    ],
+
+    specs: {
+      equipment_type: 'Reinforced transmission rototiller',
+      engine_type: 'Single-cylinder, 4-stroke, air-cooled OHV',
+      fuel_type: 'Gasoline',
+      tilling_width: '80 cm',
+      blade_configuration: '2-4 heavy-duty tine groups',
+      drag_bar: '16 mm drag bar included',
+      front_wheel: '8 x 1.75 inch front wheel',
+    },
+  },
+
+  {
+    id: 18,
+    name: 'Müller Traction Power Tiller',
+    category: 'Power Tillers',
+    model: 'Müller MT-80TR',
+
+    description:
+      'Professional power tiller equipped with agricultural traction tires for improved stability and mobility on uneven terrain.',
+
+    image: 'assets/images/products/tillers/mt80tr/main.webp',
+
+    gallery: [
+      'assets/images/products/tillers/mt80tr/1.webp',
+      // 'assets/images/products/tillers/mt80tr/2.webp',
+      // 'assets/images/products/tillers/mt80tr/3.webp',
+    ],
+
+    features: [
+      'Agricultural traction tires',
+      'High-efficiency cultivation system',
+      'Heavy-duty blade groups',
+      'Ergonomic safety controls',
+      'Optimized field maneuverability',
+    ],
+
+    specs: {
+      equipment_type: 'Traction power tiller',
+      engine_type: 'Single-cylinder, 4-stroke, air-cooled OHV',
+      fuel_type: 'Gasoline',
+      tilling_width: '80 cm',
+      blade_configuration: '3-4 interchangeable blade groups',
+      included_tires: '3.50-6 agricultural tires',
+      guide_wheel: 'Auxiliary front wheel',
+    },
+  },
+
+  {
+    id: 19,
+    name: 'Müller Professional Power Tiller',
+    category: 'Power Tillers',
+    model: 'Müller MT-950ZX',
+
+    description:
+      'High-performance professional power tiller designed for deep soil preparation and intensive agricultural workloads.',
+
+    image: 'assets/images/products/tillers/mt950zx/main.webp',
+
+    gallery: [
+      'assets/images/products/tillers/mt950zx/1.webp',
+      // 'assets/images/products/tillers/mt950zx/2.webp',
+      // 'assets/images/products/tillers/mt950zx/3.webp',
+    ],
+
+    features: [
+      'Professional heavy-duty configuration',
+      'Deep penetration blade system',
+      'High-traction agricultural tires',
+      'Retractable parking support',
+      'Adjustable ergonomic controls',
+    ],
+
+    specs: {
+      equipment_type: 'Professional heavy-duty power tiller',
+      engine_type: 'Single-cylinder, 4-stroke, OHV, air-cooled',
+      fuel_type: 'Gasoline',
+      blade_configuration: '3-4 high-penetration blade groups',
+      included_tires: '3.50-6 agricultural traction tires',
+      parking_support: 'Retractable front support leg',
+      control_system: 'Adjustable ergonomic controls',
+    },
+  },
+
+  {
+    id: 20,
+    name: 'Müller 4WD Rear Rotary Tiller',
+    category: 'Professional Tillers',
+    model: 'Müller MRT-4DW',
+
+    description:
+      'Advanced rear rotary tiller with integrated 4WD traction system designed for professional agricultural soil preparation.',
+
+    image: 'assets/images/products/tillers/mrt4dw/main.webp',
+
+    gallery: [
+      'assets/images/products/tillers/mrt4dw/1.webp',
+      //  'assets/images/products/tillers/mrt4dw/2.webp', 
+      // 'assets/images/products/tillers/mrt4dw/3.webp', 
+    ],
+
+    features: [
+      'Integrated 4WD traction system',
+      'Rear rotary blade assembly',
+      'Protective steel blade cover',
+      'High-traction agricultural tires',
+      'Optimized transmission system',
+    ],
+
+    specs: {
+      equipment_type: 'Rear rotary tiller with 4WD traction',
+      engine_type: 'Single-cylinder, 4-stroke, OHV, air-cooled',
+      fuel_type: 'Gasoline',
+      cutting_system: '6 rear rotary blades',
+      protection_system: 'Steel protective blade cover',
+      included_tires: '4.00-7 agricultural tires',
+      transmission_system: 'Integrated traction and rear rotation gears',
+    },
+  },
+
+  {
+    id: 21,
+    name: 'Müller Professional Diesel Tiller',
+    category: 'Diesel Tillers',
+    model: 'Müller MDT-1050',
+
+    description:
+      'Professional diesel power tiller engineered for hard soil cultivation and continuous agricultural operation.',
+
+    image: 'assets/images/products/tillers/mdt1050/main.webp',
+
+    gallery: [
+      'assets/images/products/tillers/mdt1050/1.webp',
+      // 'assets/images/products/tillers/mdt1050/2.webp',
+      // 'assets/images/products/tillers/mdt1050/3.webp',
+    ],
+
+    features: [
+      'High-torque diesel engine',
+      'Heavy-duty reinforced chassis',
+      'Adjustable parking support',
+      'Professional ergonomic controls',
+      'Optimized fuel efficiency',
+    ],
+
+    specs: {
+      equipment_type: 'Heavy-duty diesel tiller',
+      engine_type: 'Single-cylinder, direct injection diesel, air-cooled',
+      fuel_type: 'Diesel',
+      blade_configuration: '3-4 reinforced blade groups',
+      compatible_tires: '3.50-6 or 4.00-8 agricultural tires',
+      parking_support: 'Adjustable retractable front support',
+      safety_controls: 'Integrated safety clutch and throttle system',
+    },
+  },
+
+  {
+    id: 22,
+    name: 'Müller Industrial Diesel Tiller',
+    category: 'Diesel Tillers',
+    model: 'Müller MDT-1350X',
+
+    description:
+      'Industrial diesel tiller designed for extra-heavy agricultural workloads and large-scale soil preparation.',
+
+    image: 'assets/images/products/tillers/mdt1350x/main.webp',
+
+    gallery: [
+      'assets/images/products/tillers/mdt1350x/1.webp',
+      // 'assets/images/products/tillers/mdt1350x/2.webp',
+      // 'assets/images/products/tillers/mdt1350x/3.webp',
+    ],
+
+    features: [
+      'Massive diesel torque output',
+      'Industrial reinforced transmission',
+      'Heavy-duty agricultural tires',
+      'Impact-resistant front protection',
+      'Fully adjustable ergonomic controls',
+    ],
+
+    specs: {
+      equipment_type: 'Industrial heavy-duty diesel tiller',
+      engine_type: 'Single-cylinder, 4-stroke, direct injection diesel',
+      fuel_type: 'Diesel',
+      blade_configuration: '4-5 heavy-duty blade groups',
+      included_tires: '4.00-8 or 5.00-12 agricultural tires',
+      parking_system: 'Heavy-duty retractable front support',
+      structure_type: 'Reinforced steel chassis with front protection',
+    },
+  },
+
+  {
+    id: 23,
+    name: 'Müller Premium LED Power Tiller',
+    category: 'Premium Tillers',
+    model: 'Müller MT-LUX',
+
+    description:
+      'Premium gasoline power tiller featuring modern protective bodywork, integrated LED headlights, and advanced ergonomic controls.',
+
+    image: 'assets/images/products/tillers/mtlux/main.webp',
+
+    gallery: [
+      'assets/images/products/tillers/mtlux/1.webp',
+      'assets/images/products/tillers/mtlux/2.webp',
+      'assets/images/products/tillers/mtlux/3.webp',
+    ],
+
+    features: [
+      'Integrated dual LED headlights',
+      'Protective aerodynamic hood', 
+      'Deep tilling rotary blade system',
+      'Advanced ergonomic controls',
+      'Premium agricultural design',
+    ],
+
+    specs: {
+      equipment_type: 'Premium horizontal shaft tiller',
+      engine_type: 'Single-cylinder, 4-stroke, OHV, air-cooled',
+      fuel_type: 'Gasoline',
+      lighting_system: 'Integrated dual LED headlights',
+      cutting_configuration: 'Deep tilling rotary blade shaft',
+      parking_support: 'Retractable front support leg',
+      protection_system: 'Aerodynamic protective hood and rear mudguards',
     },
   },
 ];
