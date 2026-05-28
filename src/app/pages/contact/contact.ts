@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import emailjs from '@emailjs/browser';
 import { FormsModule } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +12,13 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./contact.css'],
 })
 export class ContactComponent {
+  constructor(private titleService: Title){}
+
+  ngOnInit(): void{
+    this.titleService.setTitle(
+      'WMüller | Contact'
+    );
+  }
 
   formData = {
     name: '',

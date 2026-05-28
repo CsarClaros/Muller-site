@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ProductCard } from '../../components/product-card/product-card';
 import { LucideAngularModule, Settings, Zap, Droplets, Shield, TrendingUp, Award, CheckCircle2, ChevronRight, Tractor, } from 'lucide-angular';
 import { PRODUCTOS, Producto } from '../../data/producto';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -54,7 +55,7 @@ export class HomeComponent {
 
   featuredProducts: Producto[] = [];
 
-  constructor() {
+  constructor(private titleService: Title) {
 
     const featuredIds = [ 6, 15, 23 ];
 
@@ -62,6 +63,12 @@ export class HomeComponent {
       .map(id => PRODUCTOS.find(p => p.id === id))
       .filter((p): p is Producto => p !== undefined);
 
+  }
+
+  ngOnInit(): void{
+    this.titleService.setTitle(
+      'WMüller | Agricultural Power'
+    )
   }
 
   benefits = [

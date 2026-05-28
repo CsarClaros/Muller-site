@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { ProductCard } from '../../components/product-card/product-card';
 import { PRODUCTOS, Producto } from '../../data/producto';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -11,6 +12,13 @@ import { PRODUCTOS, Producto } from '../../data/producto';
   templateUrl: './products.html'
 })
 export class ProductsComponent {
+  constructor(private titleService: Title){}
+
+  ngOnInit(): void {
+    this.titleService.setTitle(
+      'WMüller | Products'
+    );
+  }
 
   heroImage = "https://images.unsplash.com/photo-1690100693182-e6d7fe91bc38";
 

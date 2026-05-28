@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, Target, Eye, Award, Users, Globe, TrendingUp } from 'lucide-angular'; 
+import { Title } from '@angular/platform-browser';
+
+
 interface Value {
   icon: any; // ruta o nombre de icono SVG inline
   title: string;
@@ -19,7 +22,16 @@ interface Stat {
   styleUrl: './about.css',
 })
 export class AboutComponent {
-    teamImage = "assets/images/about/team.webp";
+
+  constructor(private titleService: Title){}
+
+  ngOnInit(): void{
+    this.titleService.setTitle(
+      'WMüller | About Us'
+    )
+  }
+  
+  teamImage = "assets/images/about/team.webp";
   warehouseImage = "assets/images/about/ware_house.webp";
   tractorImage = "assets/images/about/tractor.webp";
 

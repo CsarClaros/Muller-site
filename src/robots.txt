@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wmuller-industrial.com/sitemap.xml
+Sitemap: https://mullerindustrial.com/sitemap.xml
