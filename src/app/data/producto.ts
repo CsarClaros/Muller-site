@@ -238,12 +238,13 @@ export const PRODUCTOS: Producto[] = [
     ],
 
     specs: {
-      brand: 'Müller',
+      engine_displacement: '196 cc',
       maximum_power: '6.5 HP',
       engine_type: 'Single-cylinder, 4-stroke, OHV, air-cooled',
       shaft_type: 'Horizontal shaft',
       starting_system: 'Manual recoil starter',
-      oil_capacity: '600 ml',
+      fuel_capacity: '3.6 L',
+      oil_capacity: '0.6 L',
       recommended_oil_grades: '15W-40, 10W-40, 15W-30, 10W-30',
       air_filter_system: 'Sealed cartridge filter system',
     },
@@ -552,36 +553,43 @@ export const PRODUCTOS: Producto[] = [
 
   {
     id: 15,
-    name: 'Müller Clean Water Pump 2 Inch',
+    name: 'Müller High Flow Water Pump',
     category: 'Water Pumps',
     model: 'Müller MWP-200',
-
+  
     description:
-      'Professional clean water pump designed for agricultural irrigation, tank filling, and rapid water transfer.',
-
+      'High-flow water pump designed for irrigation, water transfer, and demanding agricultural applications.',
+  
     image: 'assets/images/products/pumps/mwp200/main.webp',
-
+  
     gallery: [
       'assets/images/products/pumps/mwp200/1.webp',
       'assets/images/products/pumps/mwp200/2.webp',
       'assets/images/products/pumps/mwp200/3.webp',
     ],
-
+  
     features: [
-      'High-performance clean water pumping',
-      'OHV gasoline engine',
-      'Automatic oil protection sensor',
+      'High-flow pumping performance',
+      '7 HP gasoline engine',
+      'Suitable for agricultural and industrial applications',
       'Anti-corrosion tubular steel frame',
       'Designed for field operation',
     ],
-
+  
     specs: {
-      equipment_type: 'Horizontal shaft clean water pump',
-      inlet_outlet_size: '2 inch (50 mm)',
-      engine_type: 'Müller 6.5 HP, single-cylinder, 4-stroke OHV',
+      equipment_type: 'High flow water pump',
       fuel_type: 'Gasoline',
+      engine_speed: '3,000 / 3,600 RPM',
+      engine_displacement: '210 cc',
+      maximum_power: '7 HP',
       fuel_tank_capacity: '3.6 L',
-      protection_system: 'Automatic low oil sensor',
+      oil_capacity: '0.6 L',
+      maximum_pressure: '2.75 bar',
+      total_elevation: '32 m',
+      suction_height: '8 m',
+      service_flow_rate: '670 L/min',
+      outlet_diameter: '2 inch (50 mm)',
+      inlet_diameter: '2 inch (50 mm)',
       support_frame: 'Tubular anti-corrosion steel cage',
     },
   },
@@ -737,7 +745,7 @@ export const PRODUCTOS: Producto[] = [
   {
     id: 20,
     name: 'Müller 4WD Rear Rotary Tiller',
-    category: 'Professional Tillers',
+    category: 'Power Tillers',
     model: 'Müller MRT-4DW',
 
     description:
@@ -773,7 +781,7 @@ export const PRODUCTOS: Producto[] = [
   {
     id: 21,
     name: 'Müller Professional Diesel Tiller',
-    category: 'Diesel Tillers',
+    category: 'Power Tillers',
     model: 'Müller MDT-1050',
 
     description:
@@ -809,7 +817,7 @@ export const PRODUCTOS: Producto[] = [
   {
     id: 22,
     name: 'Müller Industrial Diesel Tiller',
-    category: 'Diesel Tillers',
+    category: 'Power Tillers',
     model: 'Müller MDT-1350X',
 
     description:
@@ -844,37 +852,114 @@ export const PRODUCTOS: Producto[] = [
 
   {
     id: 23,
-    name: 'Müller Premium LED Power Tiller',
-    category: 'Premium Tillers',
-    model: 'Müller MT-LUX',
-
+    name: 'Müller 16 HP Power Tiller',
+    category: 'Power Tillers',
+    model: 'BS1000FG',
+  
     description:
-      'Premium gasoline power tiller featuring modern protective bodywork, integrated LED headlights, and advanced ergonomic controls.',
-
+      '16 HP gasoline power tiller designed for intensive agricultural work, featuring integrated LED headlights, gear transmission system, and high-performance tilling capabilities.',
+  
     image: 'assets/images/products/tillers/mtlux/main.webp',
-
+  
     gallery: [
       'assets/images/products/tillers/mtlux/1.webp',
       'assets/images/products/tillers/mtlux/2.webp',
       'assets/images/products/tillers/mtlux/3.webp',
     ],
-
+  
     features: [
+      '16 HP high-performance engine',
       'Integrated dual LED headlights',
-      'Protective aerodynamic hood', 
-      'Deep tilling rotary blade system',
-      'Advanced ergonomic controls',
-      'Premium agricultural design',
+      'Gear transmission system',
+      'Wet friction disc clutch',
+      'Wide 1350 mm tilling width',
     ],
-
+  
     specs: {
-      equipment_type: 'Premium horizontal shaft tiller',
-      engine_type: 'Single-cylinder, 4-stroke, OHV, air-cooled',
+      equipment_type: 'Power tiller',
+      engine_model: '192F',
       fuel_type: 'Gasoline',
+      rated_power: '16 HP',
+      engine_displacement: '420 cc',
+      rated_speed: '3600 RPM',
+      fuel_tank_capacity: '6.5 L',
+  
+      transmission_system: 'Chain drive',
+      transmission_type: 'Gear transmission',
+      clutch_type: 'Wet friction disc clutch',
+      gears: '-1 / 0 / 1 / 2',
+  
       lighting_system: 'Integrated dual LED headlights',
-      cutting_configuration: 'Deep tilling rotary blade shaft',
-      parking_support: 'Retractable front support leg',
-      protection_system: 'Aerodynamic protective hood and rear mudguards',
+  
+      tire_size: '5.00-12',
+      output_speed: '83 RPM (low) / 147 RPM (high)',
+  
+      tilling_width: '1350 mm',
+      tilling_depth: '300 mm',
+  
+      working_speed: '0.1 - 0.3 m/s',
+      working_efficiency: '0.04 hm²/h',
+      fuel_consumption: '< 35 kg/hm²',
+  
+      dimensions: '970 × 565 × 845 mm',
+      net_weight: '131 kg',
+  
+      container_capacity: '210 units (40 ft High Cube container)',
+    },
+  },
+  {
+    id: 24,
+    name: 'Müller 7 HP Power Tiller',
+    category: 'Power Tillers',
+    model: 'BS170F',
+  
+    description:
+      '7 HP gasoline power tiller designed for agricultural soil preparation, featuring a gear transmission system and efficient tilling performance.',
+  
+    image: 'assets/images/products/tillers/bs170f/main.webp',
+  
+    gallery: [
+      'assets/images/products/tillers/bs170f/1.webp',
+      'assets/images/products/tillers/bs170f/2.webp',
+      // 'assets/images/products/tillers/bs170f/3.webp',
+    ],
+  
+    features: [
+      '7 HP gasoline engine',
+      'Gear transmission system',
+      'Wet friction disc clutch',
+      '950 mm tilling width',
+      'Suitable for agricultural field operations',
+    ],
+  
+    specs: {
+      equipment_type: 'Power tiller',
+  
+      engine_model: '170F',
+      fuel_type: 'Gasoline',
+      rated_power: '7 HP',
+      engine_displacement: '212 cc',
+      rated_speed: '3600 RPM',
+      fuel_tank_capacity: '3.6 L',
+  
+      transmission_system: 'Chain drive',
+      transmission_type: 'Gear transmission',
+      clutch_type: 'Wet friction disc clutch',
+      gears: '-1 / 0 / 1 / 2',
+  
+      tire_size: '4.00-8',
+      output_speed: '83 RPM (low) / 147 RPM (high)',
+  
+      tilling_width: '950 mm',
+      tilling_depth: '200 mm',
+  
+      working_speed: '0.1 - 0.3 m/s',
+      working_efficiency: '0.04 hm²/h',
+      fuel_consumption: '< 35 kg/hm²',
+  
+      net_weight: '78 kg',
+  
+      container_capacity: '210 units (40 ft High Cube container)',
     },
   },
 ];
