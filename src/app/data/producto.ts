@@ -10,6 +10,9 @@ export interface Producto {
   image: string;
   gallery: string[];
 
+  // Optional PDF. If absent, no datasheet actions are displayed.
+  datasheet?: string;
+
   features: string[];
 
   specs: {
@@ -555,12 +558,15 @@ export const PRODUCTOS: Producto[] = [
     id: 15,
     name: 'Müller High Flow Water Pump',
     category: 'Water Pumps',
-    model: 'Müller MWP-200',
+    model: 'Müller WP-20',
   
     description:
       'High-flow water pump designed for irrigation, water transfer, and demanding agricultural applications.',
   
     image: 'assets/images/products/pumps/mwp200/main.webp',
+
+    // Serve this PDF from public/assets/docs/products/pumps/mwp200.pdf
+    datasheet: '/assets/docs/products/pumps/water_pump_w20.PDF',
   
     gallery: [
       'assets/images/products/pumps/mwp200/1.webp',
@@ -860,6 +866,8 @@ export const PRODUCTOS: Producto[] = [
       '16 HP gasoline power tiller designed for intensive agricultural work, featuring integrated LED headlights, gear transmission system, and high-performance tilling capabilities.',
   
     image: 'assets/images/products/tillers/mtlux/main.webp',
+
+    datasheet: '/assets/docs/products/power_tiller/motocultor_16_hp.PDF',
   
     gallery: [
       'assets/images/products/tillers/mtlux/1.webp',
@@ -880,7 +888,7 @@ export const PRODUCTOS: Producto[] = [
       engine_model: '192F',
       fuel_type: 'Gasoline',
       rated_power: '16 HP',
-      engine_displacement: '420 cc',
+      engine_displacement: '440 cc',
       rated_speed: '3600 RPM',
       fuel_tank_capacity: '6.5 L',
   
@@ -961,5 +969,52 @@ export const PRODUCTOS: Producto[] = [
   
       container_capacity: '210 units (40 ft High Cube container)',
     },
+    
   },
+
+{
+  id: 25,
+  name: 'Motobomba KOHLER WB2.0',
+  category: 'Water Pumps',
+  model: 'KOHLER WB 2.0',
+
+  description:
+    'Gasoline-powered water pump with 2-inch suction and discharge connections, providing a maximum flow rate of 602 L/min and a maximum total head of 32 m.',
+
+  image: 'assets/images/products/pumps/kohler-wb20/main.webp',
+
+  gallery: [
+    'assets/images/products/pumps/kohler-wb20/1.webp',
+  ],
+
+  datasheet: '/assets/docs/products/pumps/kohler-wb20-manual.pdf',
+
+  features: [
+    'Gasoline-powered engine',
+    '2-inch suction and discharge connections',
+    'Maximum flow rate of 602 L/min',
+    'Maximum suction head of 8 m',
+    'Maximum total head of 32 m',
+  ],
+
+  specs: {
+    equipment_type: 'Water pump',
+    model: 'KOHLER WB 2.0',
+    fuel_type: 'Gasoline',
+    suction_discharge_size: '51 mm (2 in)',
+    maximum_flow_rate: '602 L/min (159 gal/min)',
+    maximum_suction_head: '8 m (26 ft)',
+    maximum_total_head: '32 m',
+    engine_displacement: '208 cc',
+    bore: '70 mm',
+    stroke: '54 mm',
+    fuel_tank_capacity: '4.3 L',
+    engine_oil_capacity: '0.60 L',
+    dry_weight: '29.9 kg',
+    dimensions_length_width_height: '615 x 476 x 487 mm',
+    spark_plug_gap: '0.76 mm',
+    maximum_operating_angle: '25°',
+  },
+},
+
 ];
